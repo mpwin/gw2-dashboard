@@ -13,7 +13,16 @@
 ActiveRecord::Schema.define(version: 2020_06_16_231149) do
 
   create_table "skins", force: :cascade do |t|
+    t.integer "api_id"
     t.string "name"
+    t.string "category"
+    t.text "flags"
+    t.text "restrictions"
+    t.string "icon"
+    t.string "rarity"
+    t.text "description"
+    t.string "bracket"
+    t.string "weight_class"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -11,6 +11,7 @@ class CreateSkins < ActiveRecord::Migration[6.0]
       t.text    :description
       t.string  :bracket
       t.string  :weight_class
+      t.boolean :unlocked, default: false
 
       t.timestamps
     end

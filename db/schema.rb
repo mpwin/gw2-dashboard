@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_231149) do
     t.text "description"
     t.string "bracket"
     t.string "weight_class"
+    t.boolean "unlocked", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

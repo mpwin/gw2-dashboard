@@ -1,2 +1,2 @@
-json.extract! skin, :id, :name, :created_at, :updated_at
+json.extract! skin, :id, :name
 json.url skin_url(skin, format: :json)

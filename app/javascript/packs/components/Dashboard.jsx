@@ -1,9 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Skins from './Skins'
 
 class Dashboard extends React.Component {
   render() {
-    return <h1>Dashboard</h1>
+    return (
+      <div>
+        <h1>Dashboard</h1>
+        
+        <ul><Skins /></ul>
+      </div>
+    );
   }
 }
 

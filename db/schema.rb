@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_231149) do
+ActiveRecord::Schema.define(version: 2020_07_14_212902) do
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.boolean "unlocked", default: false
+    t.text "note"
+  end
 
   create_table "skins", force: :cascade do |t|
     t.integer "api_id"

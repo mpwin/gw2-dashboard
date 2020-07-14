@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_212902) do
   end
 
   create_table "skins", force: :cascade do |t|
+    t.integer "collection_id"
     t.integer "api_id"
     t.string "name"
     t.string "category"

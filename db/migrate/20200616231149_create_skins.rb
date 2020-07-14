@@ -1,6 +1,7 @@
 class CreateSkins < ActiveRecord::Migration[6.0]
   def change
     create_table :skins do |t|
+      t.integer :collection_id
       t.integer :api_id
       t.string  :name
       t.string  :category

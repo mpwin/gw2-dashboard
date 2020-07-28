@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_212902) do
 
   create_table "collections", force: :cascade do |t|
     t.string "name"
+    t.string "category"
+    t.string "weight_class"
     t.boolean "unlocked", default: false
     t.text "note"
   end

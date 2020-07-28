@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Skins from './Skins'
+import Collections from './Collections'
 
 class Dashboard extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
       <div>
         <h1>Dashboard</h1>
         
-        <ul><Skins /></ul>
+        <Collections />
       </div>
     );
   }

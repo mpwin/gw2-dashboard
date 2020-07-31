@@ -5,7 +5,7 @@ import Collections from './Collections'
 class Dashboard extends React.Component {
   render() {
     return (
-      <div>
+      <div class='container-fluid'>
         <h1>Dashboard</h1>
         
         <Collections />

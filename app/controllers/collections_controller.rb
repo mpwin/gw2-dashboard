@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.all
+    @collections = Collection.order(:name)
   end
 
   # GET /collections/1

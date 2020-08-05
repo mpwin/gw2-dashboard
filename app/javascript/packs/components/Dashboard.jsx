@@ -39,13 +39,13 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div class='container-fluid'>
-        <h1>Dashboard</h1>
-        
-        <Collections collections={this.state.weapons} />
-        <Collections collections={this.state.heavy_armor} />
-        <Collections collections={this.state.medium_armor} />
-        <Collections collections={this.state.light_armor} />
+      <div class='container-fluid mt-4'>
+        <div class='row'>
+          <div class='col-2'><Collections name='Weapon'       collections={this.state.weapons} /></div>
+          <div class='col-2'><Collections name='Heavy Armor'  collections={this.state.heavy_armor} /></div>
+          <div class='col-2'><Collections name='Medium Armor' collections={this.state.medium_armor} /></div>
+          <div class='col-2'><Collections name='Light Armor'  collections={this.state.light_armor} /></div>
+        </div>
       </div>
     );
   }

@@ -8,11 +8,16 @@ class Collections extends React.Component {
   render() {
     var collections = this.props.collections.map((collection) => {
       return (
-        <li>{collection.name}</li>
+        <li class='list-group-item'>{collection.name}</li>
       );
     });
 
-    return(<ul>{collections}</ul>);
+    return(
+      <ul class='list-group text-monospace'>
+        <li class='list-group-item active'>{this.props.name}</li>
+        {collections}
+      </ul>
+    );
   }
 }
 

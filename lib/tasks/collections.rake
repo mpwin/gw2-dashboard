@@ -17,9 +17,10 @@ namespace :collections do
       { name: 'Swindler',   skin_api_ids: [28, 31, 60, 67,   71,   97], note: 'Loot' },
 
       # Light Armor
-      { name: 'Apprentice', skin_api_ids: [ 3,  4, 16, 25, 29, 85], note: 'Loot' },
-      { name: 'Country',    skin_api_ids: [13, 18, 53, 56, 64, 98], note: 'Loot' },
-      { name: 'Seer',       skin_api_ids: [ 9, 10, 30, 39, 45, 94], note: 'Loot' }
+      { name: 'Apprentice', skin_api_ids: [ 3,  4, 16, 25, 29,  85], note: 'Loot' },
+      { name: 'Country',    skin_api_ids: [13, 18, 53, 56, 64,  98], note: 'Loot' },
+      { name: 'Magician',   skin_api_ids: [34, 37, 69, 70, 73, 100], note: 'Loot' },
+      { name: 'Seer',       skin_api_ids: [ 9, 10, 30, 39, 45,  94], note: 'Loot' }
     ]
 
     collection_data.each do |data|

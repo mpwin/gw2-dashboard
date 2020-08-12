@@ -5,10 +5,11 @@ namespace :collections do
       # Weapon
 
       # Heavy Armor
-      { name: 'Chainmail',  skin_api_ids: [ 1,  2, 20, 26, 81, 2041], note: 'Loot' },
-      { name: 'Scallywag',  skin_api_ids: [ 7,  8, 27, 33, 38,   92], note: 'Loot' },
-      { name: 'Worn Chain', skin_api_ids: [14, 21, 40, 50, 52,   96], note: 'Loot' },
-      { name: 'Worn Scale', skin_api_ids: [23, 24, 65, 66, 68,   99], note: 'Loot' },
+      { name: 'Chainmail',        skin_api_ids: [ 1,  2, 20, 26, 81, 2041], note: 'Loot' },
+      { name: 'Reinforced Scale', skin_api_ids: [41, 42, 72, 74, 77,  101], note: 'Loot' },
+      { name: 'Scallywag',        skin_api_ids: [ 7,  8, 27, 33, 38,   92], note: 'Loot' },
+      { name: 'Worn Chain',       skin_api_ids: [14, 21, 40, 50, 52,   96], note: 'Loot' },
+      { name: 'Worn Scale',       skin_api_ids: [23, 24, 65, 66, 68,   99], note: 'Loot' },
 
       # Medium Armor
       { name: 'Rawhide',    skin_api_ids: [ 5,  6, 19, 32,   36,   89], note: 'Loot' },

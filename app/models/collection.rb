@@ -1,6 +1,8 @@
 class Collection < ApplicationRecord
   has_many :skins, before_add: :get_skin_attributes
 
+  validates_presence_of :name
+
   private
 
   def get_skin_attributes(skin)

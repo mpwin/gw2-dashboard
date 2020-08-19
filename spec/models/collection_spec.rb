@@ -18,4 +18,13 @@ RSpec.describe Collection, type: :model do
 
     expect(collection.category).to eq('Weapon')
   end
+
+  it 'sets its weight class on skin association' do
+    collection = Collection.new
+    skin       = Skin.new(weight_class: 'Heavy')
+
+    collection.skins << skin
+
+    expect(collection.weight_class).to eq('Heavy')
+  end
 end

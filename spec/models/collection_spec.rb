@@ -10,6 +10,13 @@ RSpec.describe Collection, type: :model do
   
       expect { collection.skins << skin }.to raise_error("Category mismatch")
     end
+
+    it 'raises an error when adding a skin of a different weight class' do
+      collection = Collection.new(category: 'Armor', weight_class: 'Heavy')
+      skin       = Skin.new(category: 'Armor', weight_class: 'Light')
+
+      expect { collection.skins << skin }.to raise_error("Weight class mismatch")
+    end
   end
 
   describe 'validations' do
@@ -26,9 +33,9 @@ RSpec.describe Collection, type: :model do
     expect(collection.category).to eq('Weapon')
   end
 
-  it 'sets its weight class on skin association' do
+  it 'sets its weight class field on initial skin association' do
     collection = Collection.new
-    skin       = Skin.new(weight_class: 'Heavy')
+    skin       = Skin.new(category: 'Armor', weight_class: 'Heavy')
 
     collection.skins << skin
 

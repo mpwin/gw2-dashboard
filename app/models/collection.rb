@@ -1,5 +1,5 @@
 class Collection < ApplicationRecord
-  has_many :skins, before_add: :get_skin_attributes,
+  has_many :skins, before_add: [:check_category, :get_skin_attributes],
                    after_add:  :set_unlocked
 
   validates_presence_of :name, :category
@@ -10,8 +10,16 @@ class Collection < ApplicationRecord
 
   private
 
+  def check_category(skin)
+    if category.nil?
+      self.category = skin.category
+    else
+      raise 'Category mismatch' if category != skin.category
+    end
+  end
+
   def get_skin_attributes(skin)
-    update(category: skin.category, weight_class: skin.weight_class)
+    update(weight_class: skin.weight_class)
   end
 
   def set_unlocked(skin)

@@ -3,6 +3,13 @@ require 'rails_helper'
 RSpec.describe Collection, type: :model do
   describe 'associations' do
     it { should have_many(:skins) }
+
+    it 'raises an error when adding a skin of a different category' do
+      collection = Collection.new(category: 'Weapon')
+      skin       = Skin.new(category: 'Armor')
+  
+      expect { collection.skins << skin }.to raise_error("Category mismatch")
+    end
   end
 
   describe 'validations' do
@@ -10,7 +17,7 @@ RSpec.describe Collection, type: :model do
     it { should validate_presence_of(:category) }
   end
 
-  it 'sets its category on skin association' do
+  it 'sets its category field on initial skin association' do
     collection = Collection.new
     skin       = Skin.new(category: 'Weapon')
 

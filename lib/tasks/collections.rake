@@ -20,6 +20,7 @@ namespace :collections do
 
       # Light Armor
       { name: 'Apprentice', skin_api_ids: [ 3,  4, 16, 25, 29,  85], note: 'Loot' },
+      { name: 'Cabalist',   skin_api_ids: [49, 51, 78, 79, 82, 103], note: 'Loot' },
       { name: 'Country',    skin_api_ids: [13, 18, 53, 56, 64,  98], note: 'Loot' },
       { name: 'Magician',   skin_api_ids: [34, 37, 69, 70, 73, 100], note: 'Loot' },
       { name: 'Seer',       skin_api_ids: [ 9, 10, 30, 39, 45,  94], note: 'Loot' }

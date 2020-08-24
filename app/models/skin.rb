@@ -1,6 +1,8 @@
 class Skin < ApplicationRecord
   belongs_to :collection, optional: true
 
+  validates_presence_of :api_id
+
   serialize :flags,        Array
   serialize :restrictions, Array
 

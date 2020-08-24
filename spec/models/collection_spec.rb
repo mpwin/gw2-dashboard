@@ -42,7 +42,7 @@ RSpec.describe Collection, type: :model do
     expect(collection.weight_class).to eq('Heavy')
   end
 
-  it 'updates unlocked field after skin add' do
+  it 'updates its unlocked field after adding a skin' do
     collection = Collection.new
     skin       = Skin.new(unlocked: true)
 

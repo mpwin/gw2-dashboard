@@ -1,11 +1,17 @@
 class Collection < ApplicationRecord
   has_many :skins, before_add: [:check_category, :check_weight_class],
-                   after_add:  :set_unlocked
+                   after_add:  :check_unlocked
 
   validates_presence_of :name, :category
 
   def update_unlocked
-    update(unlocked: skins.pluck(:unlocked).all?(true))
+    unlocked = skins.pluck(:unlocked).all?(true)
+
+    if persisted?
+      update(unlocked: unlocked)
+    else
+      self.unlocked = unlocked
+    end
   end
 
   private
@@ -26,7 +32,7 @@ class Collection < ApplicationRecord
     end
   end
 
-  def set_unlocked(skin)
+  def check_unlocked(skin)
     update_unlocked
   end
 end

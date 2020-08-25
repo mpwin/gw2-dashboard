@@ -5,7 +5,7 @@ class Collection < ApplicationRecord
   validates_presence_of :name, :category
 
   def update_unlocked
-    self.unlocked = skins.pluck(:unlocked).all?(true)
+    self.unlocked = skins.collect(&:unlocked).all?(true)
     save! if persisted?
   end
 

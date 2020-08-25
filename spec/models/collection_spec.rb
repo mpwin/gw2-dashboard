@@ -17,6 +17,8 @@ RSpec.describe Collection, type: :model do
     it 'updates :unlocked after adding a skin' do
       subject.skins << Skin.new(unlocked: true)
       expect(subject.unlocked).to eq(true)
+      subject.skins << Skin.new(unlocked: false)
+      expect(subject.unlocked).to eq(false)
     end
 
     it 'raises an error when adding a skin of a different :category' do

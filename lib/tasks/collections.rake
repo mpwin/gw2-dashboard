@@ -5,6 +5,7 @@ namespace :collections do
       # Weapon
 
       # Heavy Armor
+      { name: 'Banded',           skin_api_ids: [54, 55, 83, 84, 87,  104], note: 'Loot' },
       { name: 'Chainmail',        skin_api_ids: [ 1,  2, 20, 26, 81, 2041], note: 'Loot' },
       { name: 'Reinforced Scale', skin_api_ids: [41, 42, 72, 74, 77,  101], note: 'Loot' },
       { name: 'Scallywag',        skin_api_ids: [ 7,  8, 27, 33, 38,   92], note: 'Loot' },

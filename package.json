@@ -17,6 +17,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@testing-library/react": "^10.4.9",
     "jest": "^26.4.2",
     "webpack-dev-server": "^3.11.0"
   },

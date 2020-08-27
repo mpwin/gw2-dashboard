@@ -15,6 +15,7 @@ namespace :collections do
       # Medium Armor
       { name: 'Privateer',  skin_api_ids: [44, 46, 75, 76,   80,  102], note: 'Loot' },
       { name: 'Rawhide',    skin_api_ids: [ 5,  6, 19, 32,   36,   89], note: 'Loot' },
+      { name: 'Rogue',      skin_api_ids: [57, 58, 86, 91,  890,  941], note: 'Karma' },
       { name: 'Sneakthief', skin_api_ids: [11, 12, 35, 43,   47,   95], note: 'Loot' },
       { name: 'Studded',    skin_api_ids: [17, 22, 48, 59, 1719, 1783], note: 'Legacy Armor Reward Track' },
       { name: 'Swindler',   skin_api_ids: [28, 31, 60, 67,   71,   97], note: 'Loot' },

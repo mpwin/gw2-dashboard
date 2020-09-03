@@ -6,10 +6,14 @@ class Collections extends React.Component {
     super(props);
   }
 
+  handleClick = (collection) => {
+    this.props.showCollection(collection);
+  }
+
   render() {
     var collections = this.props.collections.map((collection) => {
       return (
-        <li class={classNames('list-group-item', { 'list-group-item-success': collection.unlocked })}>
+        <li class={classNames('list-group-item', { 'list-group-item-success': collection.unlocked })} onClick={this.handleClick.bind(this, collection)}>
           {collection.name}
         </li>
       );

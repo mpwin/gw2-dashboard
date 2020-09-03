@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class Collection extends React.Component {
   constructor(props) {
@@ -6,7 +6,11 @@ class Collection extends React.Component {
   }
 
   render() {
-    return(<ul></ul>);
+    return(
+      <ul class='list-group text-monospace'>
+        <li class='list-group-item active'>{this.props.collection}</li>
+      </ul>
+    );
   }
 }
 

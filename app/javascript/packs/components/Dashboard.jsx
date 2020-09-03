@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
+import Collection from './Collection'
 import Collections from './Collections'
 
 class Dashboard extends React.Component {
@@ -41,6 +42,8 @@ class Dashboard extends React.Component {
     return (
       <div class='container-fluid mt-4'>
         <div class='row'>
+          <div class='col-2'><Collection /></div>
+          <div class='col-2'></div>
           <div class='col-2'><Collections name='Weapon'       collections={this.state.weapon} /></div>
           <div class='col-2'><Collections name='Heavy Armor'  collections={this.state.heavy_armor} /></div>
           <div class='col-2'><Collections name='Medium Armor' collections={this.state.medium_armor} /></div>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import Collection from './Collection'
 import Collections from './Collections'
+import Skins from './Skins'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -48,11 +49,11 @@ class Dashboard extends React.Component {
       <div class='container-fluid mt-4'>
         <div class='row'>
           <div class='col-2'><Collection collection={this.state.collection} /></div>
-          <div class='col-2'></div>
           <div class='col-2'><Collections name='Weapon'       collections={this.state.weapon}       showCollection={this.showCollection} /></div>
           <div class='col-2'><Collections name='Heavy Armor'  collections={this.state.heavy_armor}  showCollection={this.showCollection} /></div>
           <div class='col-2'><Collections name='Medium Armor' collections={this.state.medium_armor} showCollection={this.showCollection} /></div>
           <div class='col-2'><Collections name='Light Armor'  collections={this.state.light_armor}  showCollection={this.showCollection} /></div>
+          <div class='col-2'><Skins /></div>
         </div>
       </div>
     );

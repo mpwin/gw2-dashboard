@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 class Skins extends React.Component {
   constructor(props) {
@@ -17,11 +18,17 @@ class Skins extends React.Component {
   render() {
     var skins = this.state.skins.map((skin) => {
       return (
-        <li>{skin.name}</li>
+        <li class={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
+          {skin.name}
+        </li>
       )
     })
 
-    return(<div>{skins}</div>)
+    return(
+      <ul class='list-group text-monospace'>
+        {skins}
+      </ul>
+    )
   }
 }
 

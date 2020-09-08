@@ -4,7 +4,7 @@ class SkinsController < ApplicationController
   # GET /skins
   # GET /skins.json
   def index
-    @skins = Skin.all
+    @skins = Skin.order(:name).where(collection: nil).where.not(name: '')
   end
 
   # GET /skins/1

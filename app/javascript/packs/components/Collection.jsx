@@ -6,13 +6,18 @@ class Collection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { skins: [] };
+    this.order = { 'Helm': 1, 'Shoulders': 2, 'Coat': 3, 'Gloves': 4, 'Leggings': 5, 'Boots': 6 };
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.collection != prevProps.collection) {
       axios.get(`/collections/${this.props.collection.id}.json`)
         .then(res => {
-          this.setState({ skins: res.data.skins });
+          let skins = res.data.skins.sort((a, b) => {
+            return (this.order[a.bracket] - this.order[b.bracket]);
+          });
+
+          this.setState({ skins: skins });
         });
     }
   }

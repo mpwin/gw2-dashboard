@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
   }
 
   showCollection = (collection) => {
-    this.setState({ collection: collection.name });
+    this.setState({ collection: collection });
   }
 
   groupBy = (key, array) =>

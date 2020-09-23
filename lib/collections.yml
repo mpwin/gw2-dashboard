@@ -1,0 +1,34 @@
+---
+weapons: [
+  { name: Abaddon, note: Black Lion }
+]
+
+heavy_armor: [
+  { name: Banded,           note: Loot },
+  { name: Chainmail,        note: Loot },
+  { name: Illustrious,      note: Armorsmith Ascended },
+  { name: Reinforced Scale, note: Loot },
+  { name: Scallywag,        note: Loot },
+  { name: Worn Chain,       note: Loot },
+  { name: Worn Scale,       note: Loot }
+]
+
+medium_armor: [
+  { name: Marauder,   note: Legacy Armor Reward Track },
+  { name: Privateer,  note: Loot },
+  { name: Rawhide,    note: Loot },
+  { name: Rogue,      note: Karma },
+  { name: Sneakthief, note: Loot },
+  { name: Studded,    note: Legacy Armor Reward Track },
+  { name: Swindler,   note: Loot }
+]
+
+light_armor: [
+  { name: Apprentice,  note: Loot },
+  { name: Cabalist,    note: Loot },
+  { name: Conjurer,    note: Loot },
+  { name: Country,     note: Loot },
+  { name: Illustrious, note: Tailor Ascended },
+  { name: Magician,    note: Loot },
+  { name: Seer,        note: Loot }
+]

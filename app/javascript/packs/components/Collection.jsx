@@ -6,7 +6,14 @@ class Collection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { skins: [] };
-    this.order = { 'Helm': 1, 'Shoulders': 2, 'Coat': 3, 'Gloves': 4, 'Leggings': 5, 'Boots': 6 };
+    this.order = {
+      'Sword':      1,  'Hammer': 2, 'Longbow': 3,  'Shortbow': 4,  'Axe':     5,  'Dagger':   6,
+      'Greatsword': 7,  'Mace':   8, 'Pistol':  9,  'Rifle':    10, 'Scepter': 11, 'Staff':    12,
+      'Focus':      13, 'Torch': 14, 'Warhorn': 15, 'Shield':   16, 'Spear':   17, 'Speargun': 18,
+      'Trident':    19,
+
+      'Helm': 1, 'Shoulders': 2, 'Coat': 3, 'Gloves': 4, 'Leggings': 5, 'Boots': 6
+    };
   }
 
   componentDidUpdate(prevProps) {

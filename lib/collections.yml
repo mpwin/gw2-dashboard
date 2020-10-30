@@ -19,6 +19,9 @@ weapons: [
 heavy_armor: [
   { name: Banded,               note: Loot },
   { name: Chainmail,            note: Loot },
+  { name: Electromagnetic,      note: Asura Cultural 3 },
+  { name: Electroplated,        note: Asura Cultural 2 },
+  { name: Galvanic,             note: Asura Cultural 1 },
   { name: Illustrious,          note: Armorsmith Ascended },
   { name: Reinforced Scale,     note: Loot },
   { name: Scallywag,            note: Loot },
@@ -27,8 +30,11 @@ heavy_armor: [
 ]
 
 medium_armor: [
+  { name: Auxiliary Powered,    note: Asura Cultural 2 },
   { name: Marauder,             note: Legacy Armor Reward Track },
   { name: Privateer,            note: Loot },
+  { name: Protean,              note: Asura Cultural 1 },
+  { name: Prototype,            note: Asura Cultural 3 },
   { name: Rawhide,              note: Loot },
   { name: Rogue,                note: Karma },
   { name: Sneakthief,           note: Loot },
@@ -37,11 +43,14 @@ medium_armor: [
 ]
 
 light_armor: [
+  { name: Adept,                note: Asura Cultural 1 },
   { name: Apprentice,           note: Loot },
   { name: Cabalist,             note: Loot },
   { name: Conjurer,             note: Loot },
   { name: Country,              note: Loot },
+  { name: Genius,               note: Asura Cultural 2 },
   { name: Illustrious,          note: Tailor Ascended },
   { name: Magician,             note: Loot },
+  { name: Savant,               note: Asura Cultural 3 },
   { name: Seer,                 note: Loot }
 ]

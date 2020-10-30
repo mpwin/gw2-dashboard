@@ -34,7 +34,7 @@ def save_collection(data, category, weight_class = nil)
 
   collection.skins = Skin.where(category: category)
                          .where(weight_class: weight_class)
-                         .where('name LIKE ?', data['name'] + '%')
+                         .where('name LIKE ?', data['name'] + ' %')
 
   collection.note  = data['note']
 

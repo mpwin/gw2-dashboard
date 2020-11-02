@@ -3,8 +3,10 @@ weapons: [
   { name: Abaddon,              note: Black Lion },
   { name: Adamant Guard,        note: Charr Cultural 3 },
   { name: Aureate,              note: Human Cultural 2 },
+  { name: Demon-Haunted,        note: Shadow of the Mad King },
   { name: Flame,                note: Charr Cultural 2 },
   { name: Glyphic,              note: Asura/Sylvari Cultural 1 },
+  { name: Haunted,              note: Shadow of the Mad King },
   { name: Krytan,               note: Human Cultural 1 },
   { name: Norn,                 note: Norn Cultural 2 },
   { name: Peacemaker's,         note: Asura Cultural 3 },
@@ -23,6 +25,7 @@ heavy_armor: [
   { name: Electroplated,        note: Asura Cultural 2 },
   { name: Galvanic,             note: Asura Cultural 1 },
   { name: Illustrious,          note: Armorsmith Ascended },
+  { name: Lunatic Templar,      note: Shadow of the Mad King },
   { name: Reinforced Scale,     note: Loot },
   { name: Scallywag,            note: Loot },
   { name: Worn Chain,           note: Loot },
@@ -31,6 +34,7 @@ heavy_armor: [
 
 medium_armor: [
   { name: Auxiliary Powered,    note: Asura Cultural 2 },
+  { name: Lunatic Noble,        note: Shadow of the Mad King },
   { name: Marauder,             note: Legacy Armor Reward Track },
   { name: Privateer,            note: Loot },
   { name: Protean,              note: Asura Cultural 1 },
@@ -50,6 +54,7 @@ light_armor: [
   { name: Country,              note: Loot },
   { name: Genius,               note: Asura Cultural 2 },
   { name: Illustrious,          note: Tailor Ascended },
+  { name: Lunatic Acolyte,      note: Shadow of the Mad King },
   { name: Magician,             note: Loot },
   { name: Savant,               note: Asura Cultural 3 },
   { name: Seer,                 note: Loot }

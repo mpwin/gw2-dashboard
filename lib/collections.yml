@@ -28,6 +28,7 @@ heavy_armor: [
   { name: Lunatic Templar,      note: Shadow of the Mad King },
   { name: Reinforced Scale,     note: Loot },
   { name: Scallywag,            note: Loot },
+  { name: Warlord's,            note: PvP / WvW },
   { name: Worn Chain,           note: Loot },
   { name: Worn Scale,           note: Loot }
 ]
@@ -43,7 +44,8 @@ medium_armor: [
   { name: Rogue,                note: Karma },
   { name: Sneakthief,           note: Loot },
   { name: Studded,              note: Legacy Armor Reward Track },
-  { name: Swindler,             note: Loot }
+  { name: Swindler,             note: Loot },
+  { name: Warlord's,            note: PvP / WvW }
 ]
 
 light_armor: [
@@ -57,5 +59,6 @@ light_armor: [
   { name: Lunatic Acolyte,      note: Shadow of the Mad King },
   { name: Magician,             note: Loot },
   { name: Savant,               note: Asura Cultural 3 },
-  { name: Seer,                 note: Loot }
+  { name: Seer,                 note: Loot },
+  { name: Warlord's,            note: PvP / WvW }
 ]

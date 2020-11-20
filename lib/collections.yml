@@ -10,6 +10,7 @@ weapons: [
   { name: Krytan,               note: Human Cultural 1 },
   { name: Norn,                 note: Norn Cultural 2 },
   { name: Peacemaker's,         note: Asura Cultural 3 },
+  { name: Royal Ascalonian,     note: Ascalonian Catacombs },
   { name: Seraph,               note: Human Cultural 3 },
   { name: Shiverpeak,           note: Norn Cultural 1 },
   { name: Steam,                note: Charr Cultural 1 },
@@ -19,6 +20,7 @@ weapons: [
 ]
 
 heavy_armor: [
+  { name: Ascalonian Protector, note: Ascalonian Catacombs },
   { name: Banded,               note: Loot },
   { name: Chainmail,            note: Loot },
   { name: Electromagnetic,      note: Asura Cultural 3 },
@@ -34,6 +36,7 @@ heavy_armor: [
 ]
 
 medium_armor: [
+  { name: Ascalonian Sentry,    note: Ascalonian Catacombs },
   { name: Auxiliary Powered,    note: Asura Cultural 2 },
   { name: Lunatic Noble,        note: Shadow of the Mad King },
   { name: Marauder,             note: Legacy Armor Reward Track },
@@ -50,6 +53,7 @@ medium_armor: [
 
 light_armor: [
   { name: Adept,                note: Asura Cultural 1 },
+  { name: Ascalonian Performer, note: Ascalonian Catacombs },
   { name: Apprentice,           note: Loot },
   { name: Cabalist,             note: Loot },
   { name: Conjurer,             note: Loot },

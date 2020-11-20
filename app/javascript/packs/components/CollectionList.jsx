@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-class Collections extends React.Component {
+class CollectionList extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -28,4 +28,4 @@ class Collections extends React.Component {
   }
 }
 
-export default Collections;
+export default CollectionList;

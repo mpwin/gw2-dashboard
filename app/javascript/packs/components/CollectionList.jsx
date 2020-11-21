@@ -2,10 +2,6 @@ import React from 'react';
 import CollectionLineItem from './CollectionLineItem';
 
 class CollectionList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     var collections = this.props.collections.map((collection) => {
       return (

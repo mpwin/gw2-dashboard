@@ -16,11 +16,13 @@ class CollectionLineItem extends React.Component {
   }
 
   render() {
-    let liClass = classNames(
-      'list-group-item', 'cursor-pointer',
-      { 'list-group-item-success': ( this.props.collection.unlocked && !this.state.hover) },
-      { 'list-group-item-light':   ( this.props.collection.unlocked &&  this.state.hover) },
-      { 'list-group-item-dark':    (!this.props.collection.unlocked &&  this.state.hover) }
+    let selected = this.props.collection == this.props.selectedCollection;
+    let liClass  = classNames(
+      'list-group-item', { 'cursor-pointer': !selected },
+      { 'list-group-item-primary': selected },
+      { 'list-group-item-success': ( this.props.collection.unlocked && !this.state.hover && !selected) },
+      { 'list-group-item-light':   ( this.props.collection.unlocked &&  this.state.hover && !selected) },
+      { 'list-group-item-dark':    (!this.props.collection.unlocked &&  this.state.hover && !selected) }
     );
 
     return(

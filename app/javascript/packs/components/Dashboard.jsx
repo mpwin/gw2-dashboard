@@ -49,10 +49,10 @@ class Dashboard extends React.Component {
       <div className='container-fluid mt-4'>
         <div className='row'>
           <div className='col-2'><Collection collection={this.state.collection} /></div>
-          <div className='col-2'><CollectionList name='Weapon'       collections={this.state.weapon}       showCollection={this.showCollection} /></div>
-          <div className='col-2'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  showCollection={this.showCollection} /></div>
-          <div className='col-2'><CollectionList name='Medium Armor' collections={this.state.medium_armor} showCollection={this.showCollection} /></div>
-          <div className='col-2'><CollectionList name='Light Armor'  collections={this.state.light_armor}  showCollection={this.showCollection} /></div>
+          <div className='col-2'><CollectionList name='Weapon'       collections={this.state.weapon}       showCollection={this.showCollection} selectedCollection={this.state.collection} /></div>
+          <div className='col-2'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  showCollection={this.showCollection} selectedCollection={this.state.collection} /></div>
+          <div className='col-2'><CollectionList name='Medium Armor' collections={this.state.medium_armor} showCollection={this.showCollection} selectedCollection={this.state.collection} /></div>
+          <div className='col-2'><CollectionList name='Light Armor'  collections={this.state.light_armor}  showCollection={this.showCollection} selectedCollection={this.state.collection} /></div>
           <div className='col-2'><Skins /></div>
         </div>
       </div>

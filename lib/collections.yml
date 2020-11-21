@@ -25,13 +25,16 @@ heavy_armor: [
   { name: Banded,               note: Loot },
   { name: Chainmail,            note: Loot },
   { name: Council Guard,        note: Caudecus's Manor },
+  { name: Dreadnought,          note: Charr Cultural 3 },
   { name: Electromagnetic,      note: Asura Cultural 3 },
   { name: Electroplated,        note: Asura Cultural 2 },
   { name: Galvanic,             note: Asura Cultural 1 },
   { name: Illustrious,          note: Armorsmith Ascended },
+  { name: Legion,               note: Charr Cultural 2 },
   { name: Lunatic Templar,      note: Shadow of the Mad King },
   { name: Reinforced Scale,     note: Loot },
   { name: Scallywag,            note: Loot },
+  { name: Warband,              note: Charr Cultural 1 },
   { name: Warlord's,            note: PvP / WvW },
   { name: Worn Chain,           note: Loot },
   { name: Worn Scale,           note: Loot }
@@ -41,6 +44,7 @@ medium_armor: [
   { name: Ascalonian Sentry,    note: Ascalonian Catacombs },
   { name: Auxiliary Powered,    note: Asura Cultural 2 },
   { name: Council Watch,        note: Caudecus's Manor },
+  { name: Drover,               note: Charr Cultural 1 },
   { name: Lunatic Noble,        note: Shadow of the Mad King },
   { name: Marauder,             note: Legacy Armor Reward Track },
   { name: Privateer,            note: Loot },
@@ -51,11 +55,14 @@ medium_armor: [
   { name: Sneakthief,           note: Loot },
   { name: Studded,              note: Legacy Armor Reward Track },
   { name: Swindler,             note: Loot },
-  { name: Warlord's,            note: PvP / WvW }
+  { name: Trapper,              note: Charr Cultural 3 },
+  { name: Warlord's,            note: PvP / WvW },
+  { name: Wrangler,             note: Charr Cultural 2 }
 ]
 
 light_armor: [
   { name: Adept,                note: Asura Cultural 1 },
+  { name: Archon,               note: Charr Cultural 2 },
   { name: Ascalonian Performer, note: Ascalonian Catacombs },
   { name: Apprentice,           note: Loot },
   { name: Cabalist,             note: Loot },
@@ -64,8 +71,10 @@ light_armor: [
   { name: Country,              note: Loot },
   { name: Genius,               note: Asura Cultural 2 },
   { name: Illustrious,          note: Tailor Ascended },
+  { name: Invoker's,            note: Charr Cultural 1 },
   { name: Lunatic Acolyte,      note: Shadow of the Mad King },
   { name: Magician,             note: Loot },
+  { name: Magus,                note: Charr Cultural 3 },
   { name: Savant,               note: Asura Cultural 3 },
   { name: Seer,                 note: Loot },
   { name: Warlord's,            note: PvP / WvW }

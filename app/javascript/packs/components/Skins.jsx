@@ -18,14 +18,14 @@ class Skins extends React.Component {
   render() {
     var skins = this.state.skins.map((skin) => {
       return (
-        <li class={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
+        <li className={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
           {skin.name}
         </li>
       )
     })
 
     return(
-      <ul class='list-group text-monospace'>
+      <ul className='list-group text-monospace'>
         {skins}
       </ul>
     )

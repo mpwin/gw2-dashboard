@@ -14,8 +14,8 @@ class CollectionList extends React.Component {
     });
 
     return(
-      <ul class='list-group text-monospace'>
-        <li class='list-group-item active'>{this.props.name}</li>
+      <ul className='list-group text-monospace'>
+        <li className='list-group-item active'>{this.props.name}</li>
         {collections}
       </ul>
     );

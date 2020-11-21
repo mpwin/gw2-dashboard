@@ -33,15 +33,15 @@ class Collection extends React.Component {
     if (this.props.collection) {
       var skins = this.state.skins.map((skin) => {
         return(
-          <li class={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
+          <li className={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
             {skin.name}
           </li>
         );
       });
 
       return(
-        <ul class='list-group text-monospace'>
-          <li class='list-group-item active'>{this.props.collection.name}</li>
+        <ul className='list-group text-monospace'>
+          <li className='list-group-item active'>{this.props.collection.name}</li>
           {skins}
         </ul>
       );

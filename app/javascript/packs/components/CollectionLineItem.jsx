@@ -8,7 +8,7 @@ class CollectionLineItem extends React.Component {
 
   render() {
     return(
-      <li class={classNames('list-group-item', { 'list-group-item-success': this.props.collection.unlocked })} onClick={this.handleClick.bind(this, this.props.collection)}>
+      <li className={classNames('list-group-item', { 'list-group-item-success': this.props.collection.unlocked })} onClick={this.handleClick.bind(this, this.props.collection)}>
         {this.props.collection.name}
       </li>
     );

@@ -21,10 +21,6 @@ class CollectionLineItem extends React.Component {
     }
   }
 
-  handleClick = (collection) => {
-    this.props.selectCollection(collection);
-  }
-
   isSelected = () => {
     return this.props.collection == this.props.selectedCollection;
   }
@@ -37,7 +33,7 @@ class CollectionLineItem extends React.Component {
     let liClass = classNames('list-group-item', this.getClass(), { 'cursor-pointer': !this.isSelected() });
 
     return(
-      <li className={liClass} onClick={() => this.handleClick(this.props.collection)} onMouseEnter={() => this.setHover(true)} onMouseLeave={() => this.setHover(false)}>
+      <li className={liClass} onClick={() => this.props.selectCollection(this.props.collection)} onMouseEnter={() => this.setHover(true)} onMouseLeave={() => this.setHover(false)}>
         {this.props.collection.name}
       </li>
     );

@@ -8,7 +8,7 @@ class CollectionLineItem extends React.Component {
   }
 
   handleClick = (collection) => {
-    this.props.showCollection(collection);
+    this.props.selectCollection(collection);
   }
 
   setHover = (hover) => {

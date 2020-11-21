@@ -9,7 +9,7 @@ class CollectionList extends React.Component {
   render() {
     var collections = this.props.collections.map((collection) => {
       return (
-        <CollectionLineItem collection={collection} showCollection={this.props.showCollection} selectedCollection={this.props.selectedCollection} />
+        <CollectionLineItem collection={collection} selectCollection={this.props.selectCollection} selectedCollection={this.props.selectedCollection} />
       );
     });
 

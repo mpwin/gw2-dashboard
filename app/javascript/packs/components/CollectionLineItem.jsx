@@ -17,7 +17,7 @@ class CollectionLineItem extends React.Component {
 
   render() {
     let liClass = classNames(
-      'list-group-item',
+      'list-group-item', 'cursor-pointer',
       { 'list-group-item-success': ( this.props.collection.unlocked && !this.state.hover) },
       { 'list-group-item-light':   ( this.props.collection.unlocked &&  this.state.hover) },
       { 'list-group-item-dark':    (!this.props.collection.unlocked &&  this.state.hover) }

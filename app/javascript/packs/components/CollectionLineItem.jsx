@@ -24,7 +24,7 @@ class CollectionLineItem extends React.Component {
     );
 
     return(
-      <li className={liClass} onClick={this.handleClick.bind(this, this.props.collection)} onMouseEnter={this.setHover.bind(this, true)} onMouseLeave={this.setHover.bind(this, false)}>
+      <li className={liClass} onClick={() => this.handleClick(this.props.collection)} onMouseEnter={() => this.setHover(true)} onMouseLeave={() => this.setHover(false)}>
         {this.props.collection.name}
       </li>
     );

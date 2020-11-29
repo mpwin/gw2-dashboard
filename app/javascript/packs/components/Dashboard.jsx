@@ -60,7 +60,4 @@ class Dashboard extends React.Component {
   }
 }
 
-document.addEventListener('turbolinks:load', () => {
-  const app = document.getElementById('dashboard')
-  app && ReactDOM.render(<Dashboard />, app)
-})
+export default Dashboard;

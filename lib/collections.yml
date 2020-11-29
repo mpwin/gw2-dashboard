@@ -22,9 +22,11 @@ weapons: [
 
 heavy_armor: [
   { name: Ascalonian Protector, note: Ascalonian Catacombs },
+  { name: Avenger's,            note: Human Cultural 2 },
   { name: Banded,               note: Loot },
   { name: Carapace,             note: The Silverwastes },
   { name: Chainmail,            note: Loot },
+  { name: Commander's,          note: Human Cultural 1 },
   { name: Council Guard,        note: Caudecus's Manor },
   { name: Dreadnought,          note: Charr Cultural 3 },
   { name: Electromagnetic,      note: Asura Cultural 3 },
@@ -34,6 +36,7 @@ heavy_armor: [
   { name: Legion,               note: Charr Cultural 2 },
   { name: Luminescent,          note: The Silverwastes },
   { name: Lunatic Templar,      note: Shadow of the Mad King },
+  { name: Protector's,          note: Human Cultural 3 },
   { name: Reinforced Scale,     note: Loot },
   { name: Scallywag,            note: Loot },
   { name: Warband,              note: Charr Cultural 1 },
@@ -44,10 +47,12 @@ heavy_armor: [
 
 medium_armor: [
   { name: Ascalonian Sentry,    note: Ascalonian Catacombs },
+  { name: Assassin's,           note: Human Cultural 3 },
   { name: Auxiliary Powered,    note: Asura Cultural 2 },
   { name: Carapace,             note: The Silverwastes },
   { name: Council Watch,        note: Caudecus's Manor },
   { name: Drover,               note: Charr Cultural 1 },
+  { name: Falconer's,           note: Human Cultural 2 },
   { name: Luminescent,          note: The Silverwastes },
   { name: Lunatic Noble,        note: Shadow of the Mad King },
   { name: Marauder,             note: Legacy Armor Reward Track },
@@ -56,6 +61,7 @@ medium_armor: [
   { name: Prototype,            note: Asura Cultural 3 },
   { name: Rawhide,              note: Loot },
   { name: Rogue,                note: Karma },
+  { name: Scout's,              note: Human Cultural 1 },
   { name: Sneakthief,           note: Loot },
   { name: Studded,              note: Legacy Armor Reward Track },
   { name: Swindler,             note: Loot },
@@ -67,6 +73,7 @@ medium_armor: [
 light_armor: [
   { name: Adept,                note: Asura Cultural 1 },
   { name: Archon,               note: Charr Cultural 2 },
+  { name: Aristocrat's,         note: Human Cultural 2 },
   { name: Ascalonian Performer, note: Ascalonian Catacombs },
   { name: Apprentice,           note: Loot },
   { name: Cabalist,             note: Loot },
@@ -81,7 +88,9 @@ light_armor: [
   { name: Lunatic Acolyte,      note: Shadow of the Mad King },
   { name: Magician,             note: Loot },
   { name: Magus,                note: Charr Cultural 3 },
+  { name: Researcher's,         note: Human Cultural 1 },
   { name: Savant,               note: Asura Cultural 3 },
   { name: Seer,                 note: Loot },
+  { name: Sorcerer's,           note: Human Cultural 3 },
   { name: Warlord's,            note: PvP / WvW }
 ]

@@ -1,5 +1,27 @@
 namespace :api do
   namespace :account do
+    namespace :outfits do
+      desc 'Get account outfits'
+      task get: :environment do
+        uri = URI::HTTPS.build(
+          host: 'api.guildwars2.com',
+          path: '/v2/account/outfits',
+          query: { access_token: Rails.application.credentials.api_key }.to_query
+        )
+        response = Net::HTTP.get(uri)
+
+        JSON.parse(response).each do |id|
+          outfit = Outfit.find_by(api_id: id)
+
+          outfit.unlocked = true
+
+          puts "UNLOCK -- #{outfit.api_id}, #{outfit.name}" if outfit.changed?
+
+          outfit.save!
+        end
+      end
+    end
+
     namespace :skins do
       desc 'Get account skins'
       task get: :environment do

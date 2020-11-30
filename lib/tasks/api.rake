@@ -1,4 +1,36 @@
 namespace :api do
+  namespace :outfits do
+    desc 'Create and update outfits'
+    task get: :environment do
+      uri      = URI::HTTPS.build(host: 'api.guildwars2.com', path: '/v2/outfits')
+      response = Net::HTTP.get(uri)
+
+      JSON.parse(response).each_slice(200) do |ids|
+        uri.query = { ids: ids.join(',') }.to_query
+        response  = Net::HTTP.get(uri)
+
+        JSON.parse(response).each do |obj|
+          outfit = Outfit.find_or_initialize_by(api_id: obj['id'])
+
+          outfit.name = obj['name']
+          outfit.icon = obj['icon']
+
+          if outfit.new_record?
+            puts "CREATE -- #{outfit.api_id}, #{outfit.name}"
+          elsif outfit.changed?
+            puts "UPDATE -- #{outfit.api_id}, #{outfit.name} -- #{outfit.changed_attributes}"
+          else
+            puts "Exists -- #{outfit.api_id}, #{outfit.name}"
+          end
+
+          outfit.save!
+        end
+
+        sleep(2)
+      end
+    end
+  end
+
   namespace :skins do
     desc 'Create and update skins'
     task get: :environment do

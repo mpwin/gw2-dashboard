@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :collections, only: [:index, :show]
+    resources :outfits,     only: [:index, :show]
     resources :skins,       only: [:index, :show]
   end
 end

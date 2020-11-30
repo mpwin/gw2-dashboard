@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   defaults format: :json do
     resources :collections, only: [:index, :show]
+    resources :skins,       only: [:index, :show]
   end
-
-  resources :skins
 end

@@ -28,7 +28,9 @@ heavy_armor: [
   { name: Chainmail,            note: Loot },
   { name: Commander's,          note: Human Cultural 1 },
   { name: Council Guard,        note: Caudecus's Manor },
+  { name: Dolyak,               note: Norn Cultural 1 },
   { name: Dreadnought,          note: Charr Cultural 3 },
+  { name: Eagle,                note: Norn Cultural 2 },
   { name: Electromagnetic,      note: Asura Cultural 3 },
   { name: Electroplated,        note: Asura Cultural 2 },
   { name: Galvanic,             note: Asura Cultural 1 },
@@ -39,6 +41,7 @@ heavy_armor: [
   { name: Protector's,          note: Human Cultural 3 },
   { name: Reinforced Scale,     note: Loot },
   { name: Scallywag,            note: Loot },
+  { name: Stag,                 note: Norn Cultural 3 },
   { name: Warband,              note: Charr Cultural 1 },
   { name: Warlord's,            note: PvP / WvW },
   { name: Worn Chain,           note: Loot },
@@ -56,6 +59,7 @@ medium_armor: [
   { name: Luminescent,          note: The Silverwastes },
   { name: Lunatic Noble,        note: Shadow of the Mad King },
   { name: Marauder,             note: Legacy Armor Reward Track },
+  { name: Predatory,            note: Norn Cultural 2 },
   { name: Privateer,            note: Loot },
   { name: Protean,              note: Asura Cultural 1 },
   { name: Prototype,            note: Asura Cultural 3 },
@@ -67,6 +71,8 @@ medium_armor: [
   { name: Swindler,             note: Loot },
   { name: Trapper,              note: Charr Cultural 3 },
   { name: Warlord's,            note: PvP / WvW },
+  { name: Wolf,                 note: Norn Cultural 3 },
+  { name: Wolfborn,             note: Norn Cultural 1 },
   { name: Wrangler,             note: Charr Cultural 2 }
 ]
 
@@ -82,15 +88,18 @@ light_armor: [
   { name: Council Ministry,     note: Caudecus's Manor },
   { name: Country,              note: Loot },
   { name: Genius,               note: Asura Cultural 2 },
+  { name: Havroun,              note: Norn Cultural 2 },
   { name: Illustrious,          note: Tailor Ascended },
   { name: Invoker's,            note: Charr Cultural 1 },
   { name: Luminescent,          note: The Silverwastes },
   { name: Lunatic Acolyte,      note: Shadow of the Mad King },
+  { name: Lupine,               note: Norn Cultural 3 },
   { name: Magician,             note: Loot },
   { name: Magus,                note: Charr Cultural 3 },
   { name: Researcher's,         note: Human Cultural 1 },
   { name: Savant,               note: Asura Cultural 3 },
   { name: Seer,                 note: Loot },
+  { name: Sheepskin,            note: Norn Cultural 1 },
   { name: Sorcerer's,           note: Human Cultural 3 },
   { name: Warlord's,            note: PvP / WvW }
 ]

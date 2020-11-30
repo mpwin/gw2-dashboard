@@ -1,4 +1,4 @@
-class CollectionsController < ApplicationController
+class Api::CollectionsController < ApplicationController
   # GET /collections
   def index
     @collections = Collection.order(:name)

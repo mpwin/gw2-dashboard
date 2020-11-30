@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/outfits' => 'dashboard#show'
 
-  defaults format: :json do
+  namespace :api, defaults: { format: :json } do
     resources :collections, only: [:index, :show]
     resources :skins,       only: [:index, :show]
   end

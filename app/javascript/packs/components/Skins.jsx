@@ -10,7 +10,7 @@ class Skins extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/skins.json')
+    fetch('/api/skins.json')
       .then((response) => { return response.json() })
       .then((data)     => { this.setState({ skins: data }) });
   }

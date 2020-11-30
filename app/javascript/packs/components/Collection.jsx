@@ -18,7 +18,7 @@ class Collection extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.collection != prevProps.collection) {
-      axios.get(`/collections/${this.props.collection.id}.json`)
+      axios.get(`/api/collections/${this.props.collection.id}.json`)
         .then(res => {
           let skins = res.data.skins.sort((a, b) => {
             return (this.order[a.bracket] - this.order[b.bracket]);

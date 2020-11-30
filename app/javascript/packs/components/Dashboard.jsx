@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
     }, {});
   
   componentDidMount() {
-    axios.get('/collections.json')
+    axios.get('/api/collections.json')
       .then(res => {
         const collections = this.groupBy('category', res.data);
         const armor       = this.groupBy('weight_class', collections.Armor);

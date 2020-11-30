@@ -1,4 +1,4 @@
-class SkinsController < ApplicationController
+class Api::SkinsController < ApplicationController
   # GET /skins
   def index
     @skins = Skin.order(:name).where(collection: nil).where.not(name: '')

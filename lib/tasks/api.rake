@@ -1,4 +1,39 @@
 namespace :api do
+  namespace :dyes do
+    desc 'Create and update dyes'
+    task get: :environment do
+      uri      = URI::HTTPS.build(host: 'api.guildwars2.com', path: '/v2/colors')
+      response = Net::HTTP.get(uri)
+
+      JSON.parse(response).each_slice(200) do |ids|
+        uri.query = { ids: ids.join(',') }.to_query
+        response  = Net::HTTP.get(uri)
+
+        JSON.parse(response).each do |obj|
+          dye = Dye.find_or_initialize_by(api_id: obj['id'])
+
+          dye.name     = obj['name']
+          dye.base_rgb = obj['base_rgb']
+          dye.hue      = obj['categories'][0]
+          dye.material = obj['categories'][1]
+          dye.rarity   = obj['categories'][2]
+
+          if dye.new_record?
+            puts "CREATE -- #{dye.api_id}, #{dye.name}"
+          elsif dye.changed?
+            puts "UPDATE -- #{dye.api_id}, #{dye.name} -- #{dye.changed_attributes}"
+          else
+            puts "Exists -- #{dye.api_id}, #{dye.name}"
+          end
+
+          dye.save!
+        end
+
+        sleep(2)
+      end
+    end
+  end
+
   namespace :outfits do
     desc 'Create and update outfits'
     task get: :environment do

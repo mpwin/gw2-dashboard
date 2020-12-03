@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import axios from 'axios'
-import Collection from './Collection'
-import CollectionList from './CollectionList'
-import Skins from './Skins'
+import React from 'react';
+import axios from 'axios';
+
+import Collection from './Collection';
+import CollectionList from './CollectionList';
+import Skins from './Skins';
 
 class Wardrobe extends React.Component {
   constructor(props) {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_212625) do
+ActiveRecord::Schema.define(version: 2020_12_03_130458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_212625) do
     t.string "weight_class"
     t.boolean "unlocked", default: false
     t.text "note"
+  end
+
+  create_table "dyes", force: :cascade do |t|
+    t.integer "api_id"
+    t.string "name"
+    t.text "base_rgb"
+    t.string "hue"
+    t.string "material"
+    t.string "rarity"
+    t.boolean "unlocked", default: false
   end
 
   create_table "outfits", force: :cascade do |t|

@@ -5,7 +5,7 @@ import Collection from './Collection'
 import CollectionList from './CollectionList'
 import Skins from './Skins'
 
-class Dashboard extends React.Component {
+class Wardrobe extends React.Component {
   constructor(props) {
     super(props);
 
@@ -60,4 +60,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default Wardrobe;

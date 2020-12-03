@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'dashboard#show'
 
+  get '/dyes'    => 'dashboard#show'
   get '/outfits' => 'dashboard#show'
 
   namespace :api, defaults: { format: :json } do

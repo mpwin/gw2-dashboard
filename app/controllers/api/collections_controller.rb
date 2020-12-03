@@ -1,10 +1,10 @@
 class Api::CollectionsController < ApplicationController
-  # GET /collections
+  # GET /api/collections.json
   def index
     @collections = Collection.order(:name)
   end
 
-  # GET /collections/1
+  # GET /api/collections/1.json
   def show
     @collection = Collection.find(params[:id])
   end

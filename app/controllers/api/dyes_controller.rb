@@ -1,10 +1,10 @@
 class Api::DyesController < ApplicationController
-  # GET /dyes
+  # GET /api/dyes.json
   def index
     @dyes = Dye.order(:name)
   end
 
-  # GET /dyes/1
+  # GET /api/dyes/1.json
   def show
     @dye = Dye.find(params[:id])
   end

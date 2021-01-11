@@ -3,6 +3,7 @@ weapons: [
   { name: Abaddon,              note: Black Lion },
   { name: Adamant Guard,        note: Charr Cultural 3 },
   { name: Aureate,              note: Human Cultural 2 },
+  { name: Candy Cane,           note: Wintersday },
   { name: Demon-Haunted,        note: Shadow of the Mad King },
   { name: Flame,                note: Charr Cultural 2 },
   { name: Glyphic,              note: Asura/Sylvari Cultural 1 },
@@ -13,13 +14,17 @@ weapons: [
   { name: Mistforged Hero's,    note: WvW },
   { name: Norn,                 note: Norn Cultural 2 },
   { name: Peacemaker's,         note: Asura Cultural 3 },
+  { name: Rimed Verdant,        note: Wintersday },
   { name: Royal Ascalonian,     note: Ascalonian Catacombs },
   { name: Seraph,               note: Human Cultural 3 },
   { name: Shiverpeak,           note: Norn Cultural 1 },
+  { name: Sparkling Wrapped,    note: Wintersday },
   { name: Steam,                note: Charr Cultural 1 },
   { name: Verdant,              note: Asura/Sylvari Cultural 2 },
   { name: Warden,               note: Sylvari Cultural 3 },
-  { name: Wolfborn,             note: Norn Cultural 3 }
+  { name: Wintergreen,          note: Wintersday },
+  { name: Wolfborn,             note: Norn Cultural 3 },
+  { name: Wrapped,              note: Wintersday }
 ]
 
 heavy_armor: [

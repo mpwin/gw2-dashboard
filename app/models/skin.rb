@@ -6,6 +6,8 @@ class Skin < ApplicationRecord
   serialize :flags,        Array
   serialize :restrictions, Array
 
+  scope :standalone, -> { where(collection: nil) }
+
   after_save :update_collection_unlocked, if: [:saved_change_to_unlocked, :collection]
 
   private

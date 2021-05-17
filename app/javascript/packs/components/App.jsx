@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Dyes from './Dyes';
+import Navbar from './Navbar';
 import Outfits from './Outfits';
 import Wardrobe from './Wardrobe';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Router>
+      <Navbar />
       <Switch>
         <Route path='/' exact  component={Wardrobe} />
         <Route path='/dyes'    component={Dyes} />

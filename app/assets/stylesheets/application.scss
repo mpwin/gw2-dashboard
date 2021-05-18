@@ -3,6 +3,11 @@
  *= require_self
  */
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 li.list-group-item {
   padding-top:    0.3rem;
   padding-bottom: 0.3rem;

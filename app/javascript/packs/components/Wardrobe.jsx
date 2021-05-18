@@ -28,7 +28,7 @@ class Wardrobe extends React.Component {
       objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
       return objectsByKeyValue;
     }, {});
-  
+
   componentDidMount() {
     axios.get('/api/collections.json')
       .then(res => {
@@ -46,15 +46,13 @@ class Wardrobe extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid mt-4'>
-        <div className='row'>
-          <div className='col-2'><Collection collection={this.state.collection} /></div>
-          <div className='col-2'><CollectionList name='Weapon'       collections={this.state.weapon}       selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-          <div className='col-2'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-          <div className='col-2'><CollectionList name='Medium Armor' collections={this.state.medium_armor} selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-          <div className='col-2'><CollectionList name='Light Armor'  collections={this.state.light_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-          <div className='col-2'><Skins /></div>
-        </div>
+      <div className='container'>
+        <div className='col'><Collection collection={this.state.collection} /></div>
+        <div className='col'><CollectionList name='Weapon'       collections={this.state.weapon}       selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+        <div className='col'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+        <div className='col'><CollectionList name='Medium Armor' collections={this.state.medium_armor} selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+        <div className='col'><CollectionList name='Light Armor'  collections={this.state.light_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+        <div className='col'><Skins /></div>
       </div>
     );
   }

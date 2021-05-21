@@ -1,16 +1,43 @@
 /*
- *= require_tree .
  *= require_self
  */
 
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Courier New', monospace;
+}
+
 .container {
   display: grid;
+  grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-li.list-group-item {
-  padding-top:    0.3rem;
-  padding-bottom: 0.3rem;
+ul {
+  border: 1px solid rgba(255,255,255,.4);
+  list-style-type: none;
+  padding: 0px;
+}
+
+li {
+  border: 1px solid rgba(255,255,255,.4);
+  padding-top:    4px;
+  padding-bottom: 4px;
+  padding-left:   8px;
+}
+
+.active {
+  background-color: blue;
+}
+
+.list-group-item-primary {
+  background-color: white;
+  color: black;
+}
+
+.list-group-item-success {
+  background-color: green;
 }
 
 .cursor-pointer {

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Collection from './Collection';
 import CollectionList from './CollectionList';
+import WardrobeView from './WardrobeView';
 
 class Wardrobe extends React.Component {
   constructor(props) {
@@ -13,12 +14,17 @@ class Wardrobe extends React.Component {
       weapon:       [],
       heavy_armor:  [],
       medium_armor: [],
-      light_armor:  []
+      light_armor:  [],
+      view:         'collection'
     };
   }
 
   selectCollection = (collection) => {
     this.setState({ collection: collection });
+  }
+
+  selectView = (view) => {
+    this.setState({ view: view });
   }
 
   groupBy = (key, array) =>
@@ -51,6 +57,7 @@ class Wardrobe extends React.Component {
         <div className='col'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
         <div className='col'><CollectionList name='Medium Armor' collections={this.state.medium_armor} selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
         <div className='col'><CollectionList name='Light Armor'  collections={this.state.light_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+        <div className='col'><WardrobeView view={this.state.view} selectView={this.selectView} /></div>
       </div>
     );
   }

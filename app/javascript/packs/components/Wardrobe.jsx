@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import Collection from './Collection';
 import CollectionList from './CollectionList';
-import Skins from './Skins';
 
 class Wardrobe extends React.Component {
   constructor(props) {
@@ -52,7 +51,6 @@ class Wardrobe extends React.Component {
         <div className='col'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
         <div className='col'><CollectionList name='Medium Armor' collections={this.state.medium_armor} selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
         <div className='col'><CollectionList name='Light Armor'  collections={this.state.light_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-        <div className='col'><Skins /></div>
       </div>
     );
   }

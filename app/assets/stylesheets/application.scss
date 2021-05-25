@@ -8,23 +8,21 @@ body {
   font-family: 'Courier New', monospace;
 }
 
+ul {
+  list-style-type: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0px;
+
+  li {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 4px 0px 4px 8px;
+  }
+}
+
 .container {
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-ul {
-  border: 1px solid rgba(255,255,255,.4);
-  list-style-type: none;
-  padding: 0px;
-}
-
-li {
-  border: 1px solid rgba(255,255,255,.4);
-  padding-top:    4px;
-  padding-bottom: 4px;
-  padding-left:   8px;
 }
 
 .active {

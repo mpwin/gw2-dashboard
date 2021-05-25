@@ -49,15 +49,32 @@ class Wardrobe extends React.Component {
       });
   }
 
+  renderView = () => {
+    switch (this.state.view) {
+      case 'collection':
+        return (
+          <div className='container'>
+            <div><CollectionList name='Weapon'       collections={this.state.weapon}       selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+            <div><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+            <div><CollectionList name='Medium Armor' collections={this.state.medium_armor} selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+            <div><CollectionList name='Light Armor'  collections={this.state.light_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
+          </div>
+        );
+        break;
+      case 'standalone':
+        return (
+          <div></div>
+        );
+        break;
+    }
+  }
+
   render() {
     return (
       <div className='container'>
-        <div className='col'><Collection collection={this.state.collection} /></div>
-        <div className='col'><CollectionList name='Weapon'       collections={this.state.weapon}       selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-        <div className='col'><CollectionList name='Heavy Armor'  collections={this.state.heavy_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-        <div className='col'><CollectionList name='Medium Armor' collections={this.state.medium_armor} selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-        <div className='col'><CollectionList name='Light Armor'  collections={this.state.light_armor}  selectCollection={this.selectCollection} selectedCollection={this.state.collection} /></div>
-        <div className='col'><WardrobeView view={this.state.view} selectView={this.selectView} /></div>
+        <div><Collection collection={this.state.collection} /></div>
+        {this.renderView()}
+        <div><WardrobeView view={this.state.view} selectView={this.selectView} /></div>
       </div>
     );
   }

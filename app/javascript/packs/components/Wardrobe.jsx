@@ -11,13 +11,16 @@ class Wardrobe extends React.Component {
     super(props);
 
     this.state = {
-      collection:   null,
-      weapon:       [],
-      heavy_armor:  [],
-      medium_armor: [],
-      light_armor:  [],
-      skins:        [],
-      view:         'collection'
+      collection:      null,
+      weapon:          [],
+      heavy_armor:     [],
+      medium_armor:    [],
+      light_armor:     [],
+      weapon_skins:    [],
+      armor_skins:     [],
+      back_skins:      [],
+      gathering_skins: [],
+      view:            'collection'
     };
   }
 
@@ -52,7 +55,14 @@ class Wardrobe extends React.Component {
 
     axios.get('/api/skins.json')
       .then(res => {
-        this.setState({ skins: res.data });
+        const skins = this.groupBy('category', res.data);
+
+        this.setState({
+          weapon_skins:    skins.Weapon    || [],
+          armor_skins:     skins.Armor     || [],
+          back_skins:      skins.Back      || [],
+          gathering_skins: skins.Gathering || []
+        });
       });
   }
 
@@ -71,7 +81,10 @@ class Wardrobe extends React.Component {
       case 'standalone':
         return (
           <div className='container'>
-            <div><SkinList skins={this.state.skins} /></div>
+            <div><SkinList skins={this.state.weapon_skins} /></div>
+            <div><SkinList skins={this.state.armor_skins} /></div>
+            <div><SkinList skins={this.state.back_skins} /></div>
+            <div><SkinList skins={this.state.gathering_skins} /></div>
           </div>
         );
         break;

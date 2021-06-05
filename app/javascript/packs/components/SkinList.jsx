@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-class Skins extends React.Component {
+class SkinList extends React.Component {
   render() {
     var skins = this.props.skins.map((skin) => {
       return (
@@ -19,4 +19,4 @@ class Skins extends React.Component {
   }
 }
 
-export default Skins;
+export default SkinList;

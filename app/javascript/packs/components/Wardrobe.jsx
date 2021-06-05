@@ -81,10 +81,10 @@ class Wardrobe extends React.Component {
       case 'standalone':
         return (
           <div className='container'>
-            <div><SkinList skins={this.state.weapon_skins} /></div>
-            <div><SkinList skins={this.state.armor_skins} /></div>
-            <div><SkinList skins={this.state.back_skins} /></div>
-            <div><SkinList skins={this.state.gathering_skins} /></div>
+            <div><SkinList name='Weapon'    skins={this.state.weapon_skins} /></div>
+            <div><SkinList name='Armor'     skins={this.state.armor_skins} /></div>
+            <div><SkinList name='Back'      skins={this.state.back_skins} /></div>
+            <div><SkinList name='Gathering' skins={this.state.gathering_skins} /></div>
           </div>
         );
         break;

@@ -13,6 +13,7 @@ class SkinList extends React.Component {
 
     return(
       <ul>
+        <li className='active'>{this.props.name}</li>
         {skins}
       </ul>
     )

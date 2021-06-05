@@ -5,14 +5,14 @@ class SkinList extends React.Component {
   render() {
     var skins = this.props.skins.map((skin) => {
       return (
-        <li className={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
+        <li className={classNames({ 'list-group-item-success': skin.unlocked })}>
           {skin.name}
         </li>
       )
     })
 
     return(
-      <ul className='list-group text-monospace'>
+      <ul>
         {skins}
       </ul>
     )

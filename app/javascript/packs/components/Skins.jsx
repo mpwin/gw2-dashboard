@@ -2,21 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 
 class Skins extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      skins: []
-    };
-  }
-
-  componentDidMount() {
-    fetch('/api/skins.json')
-      .then((response) => { return response.json() })
-      .then((data)     => { this.setState({ skins: data }) });
-  }
-
   render() {
-    var skins = this.state.skins.map((skin) => {
+    var skins = this.props.skins.map((skin) => {
       return (
         <li className={classNames('list-group-item', { 'list-group-item-success': skin.unlocked })}>
           {skin.name}

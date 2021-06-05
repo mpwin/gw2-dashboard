@@ -16,6 +16,7 @@ class Wardrobe extends React.Component {
       heavy_armor:  [],
       medium_armor: [],
       light_armor:  [],
+      skins:        [],
       view:         'collection'
     };
   }
@@ -48,6 +49,11 @@ class Wardrobe extends React.Component {
           light_armor:  armor.Light        || []
         });
       });
+
+    axios.get('/api/skins.json')
+      .then(res => {
+        this.setState({ skins: res.data });
+      });
   }
 
   renderView = () => {
@@ -65,7 +71,7 @@ class Wardrobe extends React.Component {
       case 'standalone':
         return (
           <div className='container'>
-            <div><Skins /></div>
+            <div><Skins skins={this.state.skins} /></div>
           </div>
         );
         break;

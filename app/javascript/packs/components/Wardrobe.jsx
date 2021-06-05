@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Collection from './Collection';
 import CollectionList from './CollectionList';
+import Skins from './Skins';
 import WardrobeView from './WardrobeView';
 
 class Wardrobe extends React.Component {
@@ -63,7 +64,9 @@ class Wardrobe extends React.Component {
         break;
       case 'standalone':
         return (
-          <div></div>
+          <div className='container'>
+            <div><Skins /></div>
+          </div>
         );
         break;
     }

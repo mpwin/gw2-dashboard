@@ -1,6 +1,7 @@
 ---
 weapons: [
   { name: Abaddon,              note: Black Lion },
+  { name: Abyssal Fractal,      note: Sunqua Peak Fractal },
   { name: Adamant Guard,        note: Charr Cultural 3 },
   { name: Aureate,              note: Human Cultural 2 },
   { name: Candy Cane,           note: Wintersday },

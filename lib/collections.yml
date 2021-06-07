@@ -4,6 +4,7 @@ weapons: [
   { name: Abyssal Fractal,      note: Sunqua Peak Fractal },
   { name: Adamant Guard,        note: Charr Cultural 3 },
   { name: Aureate,              note: Human Cultural 2 },
+  { name: Bronze,               note: Crafting Tier 1 },
   { name: Candy Cane,           note: Wintersday },
   { name: Crimson Assassin,     note: Super Adventure Festival },
   { name: Demon-Haunted,        note: Shadow of the Mad King },
@@ -25,6 +26,7 @@ weapons: [
   { name: Shiverpeak,           note: Norn Cultural 1 },
   { name: Sparkling Wrapped,    note: Wintersday },
   { name: Steam,                note: Charr Cultural 1 },
+  { name: Steel Warband,        note: Visions of the Past },
   { name: Storm Wizard's,       note: Super Adventure Festival },
   { name: Super,                note: Super Adventure Festival },
   { name: Verdant,              note: Asura/Sylvari Cultural 2 },
@@ -120,7 +122,38 @@ light_armor: [
 
 special_cases:
   add_to_collection: [
+    { skin: Ash Legion Combat Blade,    collection: Steel Warband,  category: Weapon },
+    { skin: Ash Legion Flamesaw,        collection: Steel Warband,  category: Weapon },
+    { skin: Ash Legion Longshot,        collection: Steel Warband,  category: Weapon },
+    { skin: Ash Legion Pistol,          collection: Steel Warband,  category: Weapon },
+    { skin: Ash Legion Staff,           collection: Steel Warband,  category: Weapon },
+    { skin: Blood Legion Combat Blade,  collection: Steel Warband,  category: Weapon },
+    { skin: Blood Legion Flamesaw,      collection: Steel Warband,  category: Weapon },
+    { skin: Blood Legion Longshot,      collection: Steel Warband,  category: Weapon },
+    { skin: Blood Legion Pistol,        collection: Steel Warband,  category: Weapon },
+    { skin: Blood Legion Staff,         collection: Steel Warband,  category: Weapon },
+    { skin: Flame Legion Combat Blade,  collection: Steel Warband,  category: Weapon },
+    { skin: Flame Legion Flamesaw,      collection: Steel Warband,  category: Weapon },
+    { skin: Flame Legion Longshot,      collection: Steel Warband,  category: Weapon },
+    { skin: Flame Legion Pistol,        collection: Steel Warband,  category: Weapon },
+    { skin: Flame Legion Staff,         collection: Steel Warband,  category: Weapon },
+    { skin: Green Wood Focus,           collection: Bronze,         category: Weapon },
+    { skin: Green Wood Harpoon Gun,     collection: Bronze,         category: Weapon },
+    { skin: Green Wood Longbow,         collection: Bronze,         category: Weapon },
+    { skin: Green Wood Scepter,         collection: Bronze,         category: Weapon },
+    { skin: Green Wood Short Bow,       collection: Bronze,         category: Weapon },
+    { skin: Green Wood Staff,           collection: Bronze,         category: Weapon },
+    { skin: Green Wood Torch,           collection: Bronze,         category: Weapon },
+    { skin: Green Wood Trident,         collection: Bronze,         category: Weapon },
+    { skin: Green Wood Warhorn,         collection: Bronze,         category: Weapon },
+    { skin: Iron Legion Combat Blade,   collection: Steel Warband,  category: Weapon },
+    { skin: Iron Legion Flamesaw,       collection: Steel Warband,  category: Weapon },
+    { skin: Iron Legion Longshot,       collection: Steel Warband,  category: Weapon },
+    { skin: Iron Legion Pistol,         collection: Steel Warband,  category: Weapon },
+    { skin: Iron Legion Staff,          collection: Steel Warband,  category: Weapon }
   ]
 
   remove_from_collection: [
+    { skin: Super Hyperbeam Alpha,  category: Weapon },
+    { skin: Stag Helm,              category: Armor,  weight_class: Heavy }
   ]

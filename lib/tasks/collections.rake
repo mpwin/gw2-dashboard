@@ -22,12 +22,14 @@ namespace :collections do
     collection_data['light_armor'].each do |data|
       save_collection(data, 'Armor', 'Light')
     end
+
+    handle_special_cases(collection_data['special_cases'])
   end
 end
 
 def save_collection(data, category, weight_class = nil)
   collection = Collection.find_or_initialize_by(
-    name:         data['name'], 
+    name:         data['name'],
     category:     category,
     weight_class: weight_class
   )
@@ -40,4 +42,37 @@ def save_collection(data, category, weight_class = nil)
 
   puts '  ' + collection.name
   collection.save!
+end
+
+def handle_special_cases(cases)
+  puts 'SPECIAL CASES'
+
+  cases['add_to_collection'].each do |data|
+    skin = Skin.find_by(
+      name:         data['skin'],
+      category:     data['category'],
+      weight_class: data['weight_class']
+    )
+    collection = Collection.find_by(
+      name:         data['collection'],
+      category:     data['category'],
+      weight_class: data['weight_class']
+    )
+
+    puts "  Adding #{skin.name} to #{collection.name}"
+    skin.collection = collection
+    skin.save!
+  end
+
+  cases['remove_from_collection'].each do |data|
+    skin = Skin.find_by(
+      name:         data['skin'],
+      category:     data['category'],
+      weight_class: data['weight_class']
+    )
+
+    puts "  Removing #{skin.name} from #{skin.collection.name}"
+    skin.collection = nil
+    skin.save!
+  end
 end

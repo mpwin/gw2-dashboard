@@ -117,3 +117,10 @@ light_armor: [
   { name: Sorcerer's,           note: Human Cultural 3 },
   { name: Warlord's,            note: PvP / WvW }
 ]
+
+special_cases:
+  add_to_collection: [
+  ]
+
+  remove_from_collection: [
+  ]

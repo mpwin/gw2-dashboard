@@ -60,18 +60,17 @@ def handle_special_cases(cases)
     )
 
     puts "  Adding #{skin.name} to #{collection.name}"
-    skin.collection = collection
-    skin.save!
+    collection.skins << skin
   end
 
   cases['remove_from_collection'].each do |data|
     attributes = { name: data['skin'], category: data['category'], weight_class: data['weight_class'] }
     attributes['api_id'] = data['api_id'] if data['api_id']
 
-    skin = Skin.find_by(attributes)
+    skin       = Skin.find_by(attributes)
+    collection = skin.collection
 
-    puts "  Removing #{skin.name} from #{skin.collection.name}"
-    skin.collection = nil
-    skin.save!
+    puts "  Removing #{skin.name} from #{collection.name}"
+    collection.skins.delete(skin)
   end
 end

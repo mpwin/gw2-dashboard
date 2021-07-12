@@ -21,6 +21,15 @@ RSpec.describe Collection, type: :model do
       expect(subject.unlocked).to eq(false)
     end
 
+    it 'updates :unlocked after removing a skin' do
+      skin = Skin.new(unlocked: false)
+      subject.skins << Skin.new(unlocked: true)
+      subject.skins << skin
+      expect(subject.unlocked).to eq(false)
+      subject.skins.delete(skin)
+      expect(subject.unlocked).to eq(true)
+    end
+
     it 'raises an error when adding a skin of a different :category' do
       subject.category = 'Weapon'
       skin = Skin.new(category: 'Armor')

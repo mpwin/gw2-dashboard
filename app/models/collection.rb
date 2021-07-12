@@ -1,6 +1,7 @@
 class Collection < ApplicationRecord
-  has_many :skins, before_add: [:check_category, :check_weight_class],
-                   after_add:  :check_unlocked
+  has_many :skins, before_add:  [:check_category, :check_weight_class],
+                   after_add:    :check_unlocked,
+                   after_remove: :check_unlocked
 
   validates_presence_of :name, :category
 

@@ -3,6 +3,8 @@ weapons: [
   { name: Abaddon,              note: Black Lion },
   { name: Abyssal Fractal,      note: Sunqua Peak Fractal },
   { name: Adamant Guard,        note: Charr Cultural 3 },
+  { name: Aetherized,           note: Black Lion },
+  { name: Alchemist,            note: Black Lion },
   { name: Aureate,              note: Human Cultural 2 },
   { name: Bronze,               note: Crafting Tier 1 },
   { name: Candy Cane,           note: Wintersday },
@@ -15,6 +17,8 @@ weapons: [
   { name: Golden Wing,          note: Caudecus's Manor },
   { name: Haunted,              note: Shadow of the Mad King },
   { name: Hero's,               note: WvW Hero Weapon Reward Track },
+  { name: Holographic,          note: Dragon Bash },
+  { name: Imbued Holographic,   note: Dragon Bash },
   { name: Kaiser Snake,         note: Super Adventure Festival },
   { name: King Toad's,          note: Super Adventure Festival },
   { name: Krytan,               note: Human Cultural 1 },
@@ -38,6 +42,8 @@ weapons: [
 ]
 
 heavy_armor: [
+  { name: Aetherblade,          note: Gem Store },
+  { name: Ardent Glorious,      note: PvP },
   { name: Ascalonian Protector, note: Ascalonian Catacombs },
   { name: Avenger's,            note: Human Cultural 2 },
   { name: Banded,               note: Loot },
@@ -66,6 +72,8 @@ heavy_armor: [
 ]
 
 medium_armor: [
+  { name: Aetherblade,          note: Gem Store },
+  { name: Ardent Glorious,      note: PvP },
   { name: Ascalonian Sentry,    note: Ascalonian Catacombs },
   { name: Assassin's,           note: Human Cultural 3 },
   { name: Auxiliary Powered,    note: Asura Cultural 2 },
@@ -95,7 +103,9 @@ medium_armor: [
 
 light_armor: [
   { name: Adept,                note: Asura Cultural 1 },
+  { name: Aetherblade,          note: Gem Store },
   { name: Archon,               note: Charr Cultural 2 },
+  { name: Ardent Glorious,      note: PvP },
   { name: Aristocrat's,         note: Human Cultural 2 },
   { name: Ascalonian Performer, note: Ascalonian Catacombs },
   { name: Apprentice,           note: Loot },
@@ -135,6 +145,7 @@ special_cases:
     { skin: Blood Legion Longshot,      collection: Steel Warband,    category: Weapon },
     { skin: Blood Legion Pistol,        collection: Steel Warband,    category: Weapon },
     { skin: Blood Legion Staff,         collection: Steel Warband,    category: Weapon },
+    { skin: Einhänder,                  collection: Shiverpeak,       category: Weapon },
     { skin: Flame Dominion Torch,       collection: Dominion Tribune, category: Weapon },
     { skin: Flame Legion Combat Blade,  collection: Steel Warband,    category: Weapon },
     { skin: Flame Legion Flamesaw,      collection: Steel Warband,    category: Weapon },
@@ -156,7 +167,8 @@ special_cases:
     { skin: Iron Legion Flamesaw,       collection: Steel Warband,    category: Weapon },
     { skin: Iron Legion Longshot,       collection: Steel Warband,    category: Weapon },
     { skin: Iron Legion Pistol,         collection: Steel Warband,    category: Weapon },
-    { skin: Iron Legion Staff,          collection: Steel Warband,    category: Weapon }
+    { skin: Iron Legion Staff,          collection: Steel Warband,    category: Weapon },
+    { skin: Zweihänder,                 collection: Shiverpeak,       category: Weapon }
   ]
 
   remove_from_collection: [

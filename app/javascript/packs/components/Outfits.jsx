@@ -16,22 +16,18 @@ class Outfits extends React.Component {
   render() {
     var outfits = this.state.outfits.map((outfit) => {
       return (
-        <li className={classNames('list-group-item', { 'list-group-item-success': outfit.unlocked })}>
+        <li className={classNames({ 'unlocked': outfit.unlocked })}>
           {outfit.name}
         </li>
       );
     });
 
     return (
-      <div className='container-fluid mt-4'>
-        <div className='row'>
-          <div className='col-2'>
-            <ul className='list-group text-monospace'>
-              <li className='list-group-item active'>Outfits</li>
-              {outfits}
-            </ul>
-          </div>
-        </div>
+      <div className='container'>
+        <ul>
+          <li className='active'>Outfits</li>
+          {outfits}
+        </ul>
       </div>
     );
   }

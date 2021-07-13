@@ -9,15 +9,15 @@ class CollectionLineItem extends React.Component {
 
   getClass = () => {
     if (this.isSelected()) {
-      return 'list-group-item-primary';
+      return 'selected';
     }
 
     if (this.state.hover) {
-      return this.props.collection.unlocked ? 'list-group-item-light' : 'list-group-item-dark';
+      return this.props.collection.unlocked ? 'hover-unlocked' : 'hover-locked';
     }
 
     if (this.props.collection.unlocked) {
-      return 'list-group-item-success';
+      return 'unlocked';
     }
   }
 
@@ -30,7 +30,7 @@ class CollectionLineItem extends React.Component {
   }
 
   render() {
-    let liClass = classNames('list-group-item', this.getClass(), { 'cursor-pointer': !this.isSelected() });
+    let liClass = classNames(this.getClass(), { 'cursor-pointer': !this.isSelected() });
 
     return(
       <li className={liClass} onClick={() => this.props.selectCollection(this.props.collection)} onMouseEnter={() => this.setHover(true)} onMouseLeave={() => this.setHover(false)}>

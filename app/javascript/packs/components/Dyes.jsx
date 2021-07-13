@@ -16,22 +16,18 @@ class Dyes extends React.Component {
   render() {
     var dyes = this.state.dyes.map((dye) => {
       return (
-        <li className={classNames('list-group-item', { 'list-group-item-success': dye.unlocked })}>
+        <li className={classNames({ 'unlocked': dye.unlocked })}>
           {dye.name}
         </li>
       );
     });
 
     return (
-      <div className='container-fluid mt-4'>
-        <div className='row'>
-          <div className='col-2'>
-            <ul className='list-group text-monospace'>
-              <li className='list-group-item active'>Dyes</li>
-              {dyes}
-            </ul>
-          </div>
-        </div>
+      <div className='container'>
+        <ul>
+          <li className='active'>Dyes</li>
+          {dyes}
+        </ul>
       </div>
     );
   }

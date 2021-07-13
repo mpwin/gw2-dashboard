@@ -33,6 +33,16 @@ ul {
   background-color: blue;
 }
 
+.hover-locked {
+  background-color: gray;
+  color: white;
+}
+
+.hover-unlocked {
+  background-color: palegreen;
+  color: darkgreen;
+}
+
 .selected {
   background-color: white;
   color: black;

@@ -19,6 +19,28 @@ ul {
   }
 }
 
+#navbar {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: '. nav .';
+
+  #nav {
+    display: grid;
+    grid-area: nav;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+
+    a {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      padding: 4px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
+
 .container {
   display: grid;
   grid-gap: 24px;

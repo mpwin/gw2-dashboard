@@ -29,21 +29,43 @@ medium_tree.tag_configure('unlocked', background='green', foreground='white')
 light_tree.grid(column=3, row=0, sticky=(W, E))
 light_tree.tag_configure('unlocked', background='green', foreground='white')
 
+def by_name(item):
+    return item['name']
+
+weapon_list = []
+heavy_list  = []
+medium_list = []
+light_list  = []
+
 for id in red.smembers('weapon_ids'):
     name = red.hget('skin:%s' %(int(id)), 'name')
-    tags = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
-    weapon_tree.insert('', 'end', text=name, tags=tags)
+    tag  = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
+    weapon_list.append({ 'name': name, 'tag': tag })
 for id in red.smembers('heavy_armor_ids'):
     name = red.hget('skin:%s' %(int(id)), 'name')
-    tags = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
-    heavy_tree.insert('', 'end', text=name, tags=tags)
+    tag  = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
+    heavy_list.append({ 'name': name, 'tag': tag })
 for id in red.smembers('medium_armor_ids'):
     name = red.hget('skin:%s' %(int(id)), 'name')
-    tags = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
-    medium_tree.insert('', 'end', text=name, tags=tags)
+    tag  = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
+    medium_list.append({ 'name': name, 'tag': tag })
 for id in red.smembers('light_armor_ids'):
     name = red.hget('skin:%s' %(int(id)), 'name')
-    tags = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
-    light_tree.insert('', 'end', text=name, tags=tags)
+    tag  = 'unlocked' if red.sismember('unlocked_skin_ids', id) else 'locked'
+    light_list.append({ 'name': name, 'tag': tag })
+
+weapon_list.sort(key=by_name)
+heavy_list.sort(key=by_name)
+medium_list.sort(key=by_name)
+light_list.sort(key=by_name)
+
+for skin in weapon_list:
+    weapon_tree.insert('', 'end', text=skin['name'], tags=skin['tag'])
+for skin in heavy_list:
+    heavy_tree.insert('', 'end', text=skin['name'], tags=skin['tag'])
+for skin in medium_list:
+    medium_tree.insert('', 'end', text=skin['name'], tags=skin['tag'])
+for skin in light_list:
+    light_tree.insert('', 'end', text=skin['name'], tags=skin['tag'])
 
 root.mainloop()

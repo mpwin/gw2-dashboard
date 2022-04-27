@@ -15,6 +15,18 @@ for id in range(0, len(ids), 200):
         if not skin['name']: continue
         red.sadd('skin_ids', skin['id'])
         red.hset('skin:%s' %(skin['id']), 'name', skin['name'])
+
+        if skin['type'] == 'Weapon':
+            red.sadd('weapon_ids', skin['id'])
+        if skin['type'] == 'Armor':
+            match skin['details']['weight_class']:
+                case 'Heavy':
+                    red.sadd('heavy_armor_ids',  skin['id'])
+                case 'Medium':
+                    red.sadd('medium_armor_ids', skin['id'])
+                case 'Light':
+                    red.sadd('light_armor_ids',  skin['id'])
+
         print('%s | %s' %(skin['id'], skin['name']))
 
     time.sleep(2)

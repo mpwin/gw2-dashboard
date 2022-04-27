@@ -3,6 +3,19 @@ import requests
 import time
 
 red = redis.Redis()
+
+url = 'https://api.guildwars2.com/v2/account/skins'
+with open('key.txt') as f:
+    key = f.readline().rstrip()
+res = requests.get(url, params = { 'access_token': key })
+ids = list(res.json())
+
+for id in ids:
+    red.sadd('unlocked_skin_ids', id)
+
+print(ids)
+time.sleep(2)
+
 url = 'https://api.guildwars2.com/v2/skins'
 res = requests.get(url)
 ids = list(res.json())

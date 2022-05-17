@@ -24,8 +24,15 @@ class Dashboard:
         medium_btn.pack(side='top')
         light_btn.pack(side='top')
 
-        listframe = ListFrame(mainframe, data.weapon_list())
-        listframe.pack(side='right')
+        weapon_frame       = ListFrame(mainframe, data.weapon_list())
+        heavy_armor_frame  = ListFrame(mainframe, data.heavy_armor_list())
+        medium_armor_frame = ListFrame(mainframe, data.medium_armor_list())
+        light_armor_frame  = ListFrame(mainframe, data.light_armor_list())
+
+        weapon_frame.pack(side='left')
+        heavy_armor_frame.pack(side='left')
+        medium_armor_frame.pack(side='left')
+        light_armor_frame.pack(side='left')
 
 class ListFrame(ttk.Frame):
     def __init__(self, parent, list):

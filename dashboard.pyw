@@ -16,12 +16,12 @@ class Dashboard(ttk.Frame):
             'standalone': StandaloneFrame(self),
             }
         self.current_frame = self.frames['collection']
-        self.current_frame.pack(side='left')
+        self.current_frame.pack(side='right')
 
     def show_frame(self, frame):
         self.current_frame.pack_forget()
         self.current_frame = frame
-        self.current_frame.pack(side='left')
+        self.current_frame.pack(side='right')
 
 
 class Nav(ttk.Frame):

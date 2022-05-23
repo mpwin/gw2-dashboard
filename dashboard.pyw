@@ -8,14 +8,15 @@ class Dashboard(ttk.Frame):
     def __init__(self, root):
         super().__init__(root, padding=20)
 
-        self.pack()
-
         self.nav = Nav(self)
         self.frames = {
             'collection': CollectionFrame(self),
             'standalone': StandaloneFrame(self),
             }
         self.current_frame = self.frames['collection']
+
+        self.pack()
+        self.nav.pack(side='left', fill='y')
         self.current_frame.pack(side='right')
 
 
@@ -25,7 +26,6 @@ class Nav(ttk.Frame):
         super().__init__(dashboard, padding=(0, 0, 10, 0))
 
         self.dashboard = dashboard
-        self.pack(side='left', fill='both')
 
         self.collection_btn = ttk.Button(
             self,

@@ -19,10 +19,6 @@ class Dashboard:
 
         collection_btn.pack(side='top')
         standalone_btn.pack(side='top')
-        weapon_btn.pack(side='top')
-        heavy_btn.pack(side='top')
-        medium_btn.pack(side='top')
-        light_btn.pack(side='top')
 
         weapon_frame       = ListFrame(mainframe, data.weapon_list())
         heavy_armor_frame  = ListFrame(mainframe, data.heavy_armor_list())

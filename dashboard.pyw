@@ -2,12 +2,12 @@ import data
 import tkinter as tk
 from tkinter import ttk
 
-class Dashboard:
+class Dashboard(ttk.Frame):
     def __init__(self, root):
-        mainframe = ttk.Frame(root, padding=20)
-        mainframe.pack()
+        super().__init__(root, padding=20)
+        self.pack()
 
-        nav = ttk.Frame(mainframe, padding=(0, 0, 10, 0))
+        nav = ttk.Frame(self, padding=(0, 0, 10, 0))
         nav.pack(side='left', fill='both')
 
         collection_btn = ttk.Button(nav, text='Collection', command=lambda: self.show_frame(self.frames['collection']))
@@ -16,8 +16,8 @@ class Dashboard:
         standalone_btn.pack(side='top')
 
         self.frames = dict(
-            collection = CollectionFrame(mainframe),
-            standalone = StandaloneFrame(mainframe)
+            collection = CollectionFrame(self),
+            standalone = StandaloneFrame(self)
         )
 
         self.current_frame = self.frames['collection']

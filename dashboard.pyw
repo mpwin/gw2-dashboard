@@ -12,11 +12,6 @@ class Dashboard:
 
         collection_btn = ttk.Button(nav, text='Collection', command=lambda: self.show_frame(self.frames['collection']))
         standalone_btn = ttk.Button(nav, text='Standalone', command=lambda: self.show_frame(self.frames['standalone']))
-        weapon_btn     = ttk.Button(nav, text='Weapon')
-        heavy_btn      = ttk.Button(nav, text='Heavy')
-        medium_btn     = ttk.Button(nav, text='Medium')
-        light_btn      = ttk.Button(nav, text='Light')
-
         collection_btn.pack(side='top')
         standalone_btn.pack(side='top')
 

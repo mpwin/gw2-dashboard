@@ -1,5 +1,5 @@
 import data
-from tkinter import *
+import tkinter as tk
 from tkinter import ttk
 
 class Dashboard:
@@ -45,7 +45,7 @@ class ListFrame(ttk.Frame):
         for item in list:
             self.treeview.insert('', 'end', text=item['name'], tags=item['tag'])
 
-root  = Tk()
+root = tk.Tk()
 root.title('Guild Wars 2 Dashboard')
 dashboard = Dashboard(root)
 root.mainloop()

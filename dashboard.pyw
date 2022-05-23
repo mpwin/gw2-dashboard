@@ -10,8 +10,8 @@ class Dashboard:
         nav = ttk.Frame(mainframe, padding=(0, 0, 10, 0))
         nav.pack(side='left', fill='both')
 
-        collection_btn = ttk.Button(nav, text='Collection')
-        standalone_btn = ttk.Button(nav, text='Standalone')
+        collection_btn = ttk.Button(nav, text='Collection', command=lambda: self.show_frame(self.frames['collection']))
+        standalone_btn = ttk.Button(nav, text='Standalone', command=lambda: self.show_frame(self.frames['standalone']))
         weapon_btn     = ttk.Button(nav, text='Weapon')
         heavy_btn      = ttk.Button(nav, text='Heavy')
         medium_btn     = ttk.Button(nav, text='Medium')
@@ -20,10 +20,37 @@ class Dashboard:
         collection_btn.pack(side='top')
         standalone_btn.pack(side='top')
 
-        weapon_frame       = ListFrame(mainframe, data.weapon_list())
-        heavy_armor_frame  = ListFrame(mainframe, data.heavy_armor_list())
-        medium_armor_frame = ListFrame(mainframe, data.medium_armor_list())
-        light_armor_frame  = ListFrame(mainframe, data.light_armor_list())
+        self.frames = dict(
+            collection = CollectionFrame(mainframe),
+            standalone = StandaloneFrame(mainframe)
+        )
+
+        self.current_frame = self.frames['collection']
+        self.current_frame.pack(side='left')
+
+    def show_frame(self, frame):
+        self.current_frame.pack_forget()
+        self.current_frame = frame
+        self.current_frame.pack(side='left')
+
+class CollectionFrame(ttk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        self.treeview = ttk.Treeview(self, height=40, show='tree')
+        self.treeview.pack(side='left')
+
+        for i in range(40):
+            self.treeview.insert('', 'end', text=i+1)
+
+class StandaloneFrame(ttk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        weapon_frame       = ListFrame(self, data.weapon_list())
+        heavy_armor_frame  = ListFrame(self, data.heavy_armor_list())
+        medium_armor_frame = ListFrame(self, data.medium_armor_list())
+        light_armor_frame  = ListFrame(self, data.light_armor_list())
 
         weapon_frame.pack(side='left')
         heavy_armor_frame.pack(side='left')

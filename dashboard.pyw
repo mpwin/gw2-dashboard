@@ -7,13 +7,7 @@ class Dashboard(ttk.Frame):
         super().__init__(root, padding=20)
         self.pack()
 
-        nav = ttk.Frame(self, padding=(0, 0, 10, 0))
-        nav.pack(side='left', fill='both')
-
-        collection_btn = ttk.Button(nav, text='Collection', command=lambda: self.show_frame(self.frames['collection']))
-        standalone_btn = ttk.Button(nav, text='Standalone', command=lambda: self.show_frame(self.frames['standalone']))
-        collection_btn.pack(side='top')
-        standalone_btn.pack(side='top')
+        self.nav = Nav(self)
 
         self.frames = dict(
             collection = CollectionFrame(self),
@@ -27,6 +21,24 @@ class Dashboard(ttk.Frame):
         self.current_frame.pack_forget()
         self.current_frame = frame
         self.current_frame.pack(side='left')
+
+class Nav(ttk.Frame):
+    def __init__(self, dashboard):
+        super().__init__(dashboard, padding=(0, 0, 10, 0))
+
+        self.pack(side='left', fill='both')
+
+        self.collection_btn = ttk.Button(
+            self,
+            text    = 'Collection',
+            command = lambda: dashboard.show_frame(dashboard.frames['collection'])
+        ).pack(side = 'top')
+
+        self.standalone_btn = ttk.Button(
+            self,
+            text    = 'Standalone',
+            command = lambda: dashboard.show_frame(dashboard.frames['standalone'])
+        ).pack(side = 'top')
 
 class CollectionFrame(ttk.Frame):
     def __init__(self, parent):

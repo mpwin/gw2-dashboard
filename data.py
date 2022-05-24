@@ -3,7 +3,9 @@ import requests
 import time
 from operator import itemgetter
 
+
 r = redis.Redis()
+
 
 def get_data():
     red = redis.Redis()
@@ -11,7 +13,7 @@ def get_data():
     url = 'https://api.guildwars2.com/v2/account/skins'
     with open('key.txt') as f:
         key = f.readline().rstrip()
-    res = requests.get(url, params = { 'access_token': key })
+    res = requests.get(url, params={'access_token': key})
     ids = list(res.json())
 
     for id in ids:
@@ -26,7 +28,7 @@ def get_data():
 
     for id in range(0, len(ids), 200):
         grp = ids[id:id + 200]
-        res = requests.get(url, params = { 'ids': ','.join(map(str, grp)) })
+        res = requests.get(url, params={'ids': ','.join(map(str, grp))})
 
         for skin in res.json():
             if not skin['name']: continue
@@ -38,48 +40,52 @@ def get_data():
             if skin['type'] == 'Armor':
                 match skin['details']['weight_class']:
                     case 'Heavy':
-                        red.sadd('heavy_armor_ids',  skin['id'])
+                        red.sadd('heavy_armor_ids', skin['id'])
                     case 'Medium':
                         red.sadd('medium_armor_ids', skin['id'])
                     case 'Light':
-                        red.sadd('light_armor_ids',  skin['id'])
+                        red.sadd('light_armor_ids', skin['id'])
 
             print('%s | %s' %(skin['id'], skin['name']))
 
         time.sleep(2)
 
+
 def weapon_list():
     list = []
     for id in r.smembers('weapon_ids'):
         name = r.hget('skin:%s' %(int(id)), 'name')
-        tag  = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
-        list.append({ 'name': name, 'tag': tag })
+        tag = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
+        list.append({'name': name, 'tag': tag})
     list = sorted(list, key=itemgetter('name'))
     return list
+
 
 def heavy_armor_list():
     list = []
     for id in r.smembers('heavy_armor_ids'):
         name = r.hget('skin:%s' %(int(id)), 'name')
-        tag  = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
-        list.append({ 'name': name, 'tag': tag })
+        tag = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
+        list.append({'name': name, 'tag': tag})
     list = sorted(list, key=itemgetter('name'))
     return list
+
 
 def medium_armor_list():
     list = []
     for id in r.smembers('medium_armor_ids'):
         name = r.hget('skin:%s' %(int(id)), 'name')
-        tag  = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
-        list.append({ 'name': name, 'tag': tag })
+        tag = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
+        list.append({'name': name, 'tag': tag})
     list = sorted(list, key=itemgetter('name'))
     return list
+
 
 def light_armor_list():
     list = []
     for id in r.smembers('light_armor_ids'):
         name = r.hget('skin:%s' %(int(id)), 'name')
-        tag  = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
-        list.append({ 'name': name, 'tag': tag })
+        tag = 'unlocked' if r.sismember('unlocked_skin_ids', id) else 'locked'
+        list.append({'name': name, 'tag': tag})
     list = sorted(list, key=itemgetter('name'))
     return list

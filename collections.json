@@ -1,0 +1,20 @@
+{
+    "weapon": [
+        {
+            "name": "Glyphic",
+            "note": "Asura and Sylvari Cultural Tier 1"
+        },
+        {
+            "name": "Krytan",
+            "note": "Human Cultural Tier 1"
+        },
+        {
+            "name": "Shiverpeak",
+            "note": "Norn Cultural Tier 1"
+        },
+        {
+            "name": "Steam",
+            "note": "Charr Cultural Tier 1"
+        }
+    ]
+}

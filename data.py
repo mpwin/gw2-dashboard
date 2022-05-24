@@ -1,3 +1,4 @@
+import json
 import redis
 import requests
 import time
@@ -49,6 +50,15 @@ def get_data():
             print('%s | %s' %(skin['id'], skin['name']))
 
         time.sleep(2)
+
+
+def create_collections():
+    with open('collections.json') as f:
+        data = json.load(f)
+
+    for index, weapon in enumerate(data['weapon']):
+        r.sadd('collections:weapon', index)
+        r.set('collection:%s' %(index), weapon['name'])
 
 
 def weapon_list():

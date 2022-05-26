@@ -16,5 +16,77 @@
             "name": "Steam",
             "note": "Charr Cultural Tier 1"
         }
+    ],
+
+
+    "heavy": [
+        {
+            "name": "Arborist",
+            "note": "Sylvari Cultural Tier 1"
+        },
+        {
+            "name": "Commander's",
+            "note": "Human Cultural Tier 1"
+        },
+        {
+            "name": "Dolyak",
+            "note": "Norn Cultural Tier 1"
+        },
+        {
+            "name": "Galvanic",
+            "note": "Asura Cultural Tier 1"
+        },
+        {
+            "name": "Warband",
+            "note": "Charr Cultural Tier 1"
+        }
+    ],
+
+
+    "medium": [
+        {
+            "name": "Drover",
+            "note": "Charr Cultural Tier 1"
+        },
+        {
+            "name": "Evergreen",
+            "note": "Sylvari Cultural Tier 1"
+        },
+        {
+            "name": "Protean",
+            "note": "Asura Cultural Tier 1"
+        },
+        {
+            "name": "Scout's",
+            "note": "Human Cultural Tier 1"
+        },
+        {
+            "name": "Wolfborn",
+            "note": "Norn Cultural Tier 1"
+        }
+    ],
+
+
+    "light": [
+        {
+            "name": "Adept",
+            "note": "Asura Cultural Tier 1"
+        },
+        {
+            "name": "Invoker's",
+            "note": "Charr Cultural Tier 1"
+        },
+        {
+            "name": "Researcher's",
+            "note": "Human Cultural Tier 1"
+        },
+        {
+            "name": "Sheepskin",
+            "note": "Norn Cultural Tier 1"
+        },
+        {
+            "name": "Snapdragon",
+            "note": "Sylvari Cultural Tier 1"
+        }
     ]
 }

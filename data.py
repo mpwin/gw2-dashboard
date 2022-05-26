@@ -17,7 +17,7 @@ def get_data():
 
 
 def get_account_skins():
-    response = requests.get(f'{url}/v2/account/skins', params={'access_token': key})
+    response = requests.get(f'{url}/account/skins', params={'access_token': key})
     for i in response.json():
         r.sadd('skins:unlocked', i)
     print('%s skins unlocked.' %(r.scard('skins:unlocked')))

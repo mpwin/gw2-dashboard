@@ -56,9 +56,10 @@ def create_collections():
     with open('collections.json') as f:
         data = json.load(f)
 
-    for index, weapon in enumerate(data['weapon']):
-        r.sadd('collections:weapon', index)
-        r.set('collection:%s' %(index), weapon['name'])
+    for category in ['weapon', 'heavy', 'medium', 'light']:
+        for index, collection in enumerate(data[category]):
+            r.sadd(f'collections:{category}', index)
+            r.set(f'collection:{category}:{index}', collection['name'])
 
 
 def weapon_collection_list():

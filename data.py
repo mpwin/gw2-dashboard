@@ -6,11 +6,12 @@ from operator import itemgetter
 
 
 r = redis.Redis()
+url = 'https://api.guildwars2.com/v2'
+
 
 def get_data():
     get_account_skins()
 
-    url = 'https://api.guildwars2.com/v2'
     res = requests.get(f'{url}/skins')
     ids = list(res.json())
 
@@ -42,7 +43,7 @@ def get_data():
 def get_account_skins():
     with open('key.txt') as f:
         key = f.readline().rstrip()
-    response = requests.get('https://api.guildwars2.com/v2/account/skins', params={'access_token': key})
+    response = requests.get(f'{url}/v2/account/skins', params={'access_token': key})
     for i in response.json():
         r.sadd('skins:unlocked', i)
     print('%s skins unlocked.' %(r.scard('skins:unlocked')))

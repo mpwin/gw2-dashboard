@@ -8,18 +8,9 @@ from operator import itemgetter
 r = redis.Redis()
 
 def get_data():
+    get_account_skins()
+
     url = 'https://api.guildwars2.com/v2'
-
-    with open('key.txt') as f:
-        key = f.readline().rstrip()
-    res = requests.get(f'{url}/account/skins', params={'access_token': key})
-    ids = list(res.json())
-
-    for i in ids:
-        r.sadd('unlocked_skin_ids', i)
-
-    time.sleep(2)
-
     res = requests.get(f'{url}/skins')
     ids = list(res.json())
 
@@ -46,6 +37,16 @@ def get_data():
             print('%s | %s' %(skin['id'], skin['name']))
 
         time.sleep(2)
+
+
+def get_account_skins():
+    with open('key.txt') as f:
+        key = f.readline().rstrip()
+    response = requests.get('https://api.guildwars2.com/v2/account/skins', params={'access_token': key})
+    for i in response.json():
+        r.sadd('skins:unlocked', i)
+    print('%s skins unlocked.' %(r.scard('skins:unlocked')))
+    time.sleep(2)
 
 
 def create_collections():

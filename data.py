@@ -67,41 +67,11 @@ def collection_list(category):
     return l
 
 
-def weapon_list():
-    list = []
-    for id in r.smembers('skins:weapon'):
-        name = r.mget('skin:%s' %(int(id)))
-        tag = 'unlocked' if r.sismember('skins:unlocked', id) else 'locked'
-        list.append({'name': name, 'tag': tag})
-    list = sorted(list, key=itemgetter('name'))
-    return list
-
-
-def heavy_armor_list():
-    list = []
-    for id in r.smembers('skins:heavy'):
-        name = r.mget('skin:%s' %(int(id)))
-        tag = 'unlocked' if r.sismember('skins:unlocked', id) else 'locked'
-        list.append({'name': name, 'tag': tag})
-    list = sorted(list, key=itemgetter('name'))
-    return list
-
-
-def medium_armor_list():
-    list = []
-    for id in r.smembers('skins:medium'):
-        name = r.mget('skin:%s' %(int(id)))
-        tag = 'unlocked' if r.sismember('skins:unlocked', id) else 'locked'
-        list.append({'name': name, 'tag': tag})
-    list = sorted(list, key=itemgetter('name'))
-    return list
-
-
-def light_armor_list():
-    list = []
-    for id in r.smembers('skins:light'):
-        name = r.mget('skin:%s' %(int(id)))
-        tag = 'unlocked' if r.sismember('skins:unlocked', id) else 'locked'
-        list.append({'name': name, 'tag': tag})
-    list = sorted(list, key=itemgetter('name'))
-    return list
+def skin_list(category):
+    l = []
+    for i in r.smembers(f'skins:{category}'):
+        name = r.mget('skin:%s' %(int(i)))
+        tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
+        l.append({'name': name, 'tag': tag})
+    l = sorted(l, key=itemgetter('name'))
+    return l

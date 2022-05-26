@@ -49,11 +49,7 @@ class CollectionFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.treeview = ttk.Treeview(self, height=40, show='tree')
-        self.treeview.pack(side='left')
-
-        for i in range(40):
-            self.treeview.insert('', 'end', text=i+1)
+        self.weapon = ListFrame(self, data.weapon_collection_list()).pack(side='left')
 
 
 class StandaloneFrame(ttk.Frame):

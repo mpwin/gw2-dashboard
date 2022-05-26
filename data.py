@@ -13,15 +13,22 @@ with open('key.txt') as f:
 
 def get_data():
     get_account_skins()
+    get_skins()
 
-    res = requests.get(f'{url}/skins')
-    ids = list(res.json())
 
+def get_account_skins():
+    response = requests.get(f'{url}/v2/account/skins', params={'access_token': key})
+    for i in response.json():
+        r.sadd('skins:unlocked', i)
+    print('%s skins unlocked.' %(r.scard('skins:unlocked')))
+    time.sleep(2)
+
+
+def get_skins():
+    ids = requests.get(f'{url}/skins').json()
     for i in range(0, len(ids), 200):
-        grp = ids[i:i + 200]
-        res = requests.get(f'{url}/skins', params={'ids': ','.join(map(str, grp))})
-
-        for skin in res.json():
+        response = requests.get(f'{url}/skins', params={'ids': ','.join(map(str, ids[i:i+200]))})
+        for skin in response.json():
             if not skin['name']: continue
             r.sadd('skin_ids', skin['id'])
             r.hset('skin:%s' %(skin['id']), 'name', skin['name'])
@@ -38,16 +45,7 @@ def get_data():
                         r.sadd('light_armor_ids', skin['id'])
 
             print('%s | %s' %(skin['id'], skin['name']))
-
         time.sleep(2)
-
-
-def get_account_skins():
-    response = requests.get(f'{url}/v2/account/skins', params={'access_token': key})
-    for i in response.json():
-        r.sadd('skins:unlocked', i)
-    print('%s skins unlocked.' %(r.scard('skins:unlocked')))
-    time.sleep(2)
 
 
 def create_collections():

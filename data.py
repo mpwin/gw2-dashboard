@@ -58,8 +58,6 @@ def create_collections():
             r.set(f'collection:{category}:{index}', collection['name'])
 
 
-
-
 def collection_list(category):
     l = []
     for i in r.smembers(f'collections:{category}'):

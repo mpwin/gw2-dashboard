@@ -49,7 +49,10 @@ class CollectionFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.weapon = ListFrame(self, data.weapon_collection_list()).pack(side='left')
+        self.weapon = ListFrame(self, data.collection_list('weapon')).pack(side='left')
+        self.heavy = ListFrame(self, data.collection_list('heavy')).pack(side='left')
+        self.medium = ListFrame(self, data.collection_list('medium')).pack(side='left')
+        self.light = ListFrame(self, data.collection_list('light')).pack(side='left')
 
 
 class StandaloneFrame(ttk.Frame):

@@ -62,10 +62,10 @@ def create_collections():
             r.set(f'collection:{category}:{index}', collection['name'])
 
 
-def weapon_collection_list():
+def collection_list(category):
     l = []
-    for i in r.smembers('collections:weapon'):
-        name = r.mget(f'collection:{int(i)}')
+    for i in r.smembers(f'collections:{category}'):
+        name = r.mget(f'collection:{category}:{int(i)}')
         l.append({'name': name, 'tag': ''})
     l = sorted(l, key=itemgetter('name'))
     return l

@@ -61,7 +61,7 @@ def create_collections():
             for i in r.smembers(f'skins:{category}'):
                 name = r.get('skin:%s' %(int(i))).decode()
                 if re.match((collection['name'] + ' '), name):
-                    r.sadd(f'collections:{category}:{index}:skins', i)
+                    r.sadd(f'collection:{category}:{index}:skins', i)
 
 
 def collection_list(category):

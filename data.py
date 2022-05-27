@@ -1,4 +1,5 @@
 import json
+import re
 import redis
 import requests
 import time
@@ -56,6 +57,11 @@ def create_collections():
         for index, collection in enumerate(data[category]):
             r.sadd(f'collections:{category}', index)
             r.set(f'collection:{category}:{index}', collection['name'])
+
+            for i in r.smembers(f'skins:{category}'):
+                name = r.get('skin:%s' %(int(i))).decode()
+                if re.match((collection['name'] + ' '), name):
+                    r.sadd(f'collections:{category}:{index}:skins', i)
 
 
 def collection_list(category):

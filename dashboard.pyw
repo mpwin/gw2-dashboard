@@ -81,7 +81,7 @@ class ListFrame(ttk.Frame):
         self.scrollbar.pack(side='right', fill='y')
 
         for item in items:
-            self.treeview.insert('', 'end', text=item['name'], tags=item['tag'])
+            self.treeview.insert('', 'end', item['id'], text=item['name'], tags=item['tag'])
 
 
 root = tk.Tk()

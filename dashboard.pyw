@@ -82,6 +82,10 @@ class ListFrame(ttk.Frame):
 
         for item in items:
             self.treeview.insert('', 'end', item['id'], text=item['name'], tags=item['tag'])
+            if 'children' in item.keys():
+                for child in item['children']:
+                    self.treeview.insert(item['id'], 'end', child['id'],
+                                         text=child['name'], tags=child['tag'])
 
 
 root = tk.Tk()

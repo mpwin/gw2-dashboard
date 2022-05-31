@@ -68,7 +68,12 @@ def collection_list(category):
     l = []
     for i in r.smembers(f'collections:{category}'):
         name = r.get(f'collection:{category}:{int(i)}')
-        l.append({'id': i, 'name': name, 'tag': ''})
+        children = []
+        for c in r.smembers(f'collections:{category}:{int(i)}:skins'):
+            cname = r.get(f'skin:{int(c)}')
+            ctag = 'unlocked' if r.sismember('skins:unlocked', c) else 'locked'
+            children.append({'id': c, 'name': cname, 'tag': ctag})
+        l.append({'id': i, 'name': name, 'tag': '', 'children': children})
     l = sorted(l, key=itemgetter('name'))
     return l
 

@@ -64,7 +64,7 @@ def create_collections():
                     r.sadd(f'collection:{category}:{index}:skins', i)
 
 
-def collection_list(category):
+def collections(category):
     l = []
     for i in r.smembers(f'collections:{category}'):
         name = r.get(f'collection:{category}:{int(i)}')
@@ -78,7 +78,7 @@ def collection_list(category):
     return l
 
 
-def skin_list(category):
+def skins(category):
     l = []
     for i in r.smembers(f'skins:{category}'):
         name = r.get('skin:%s' %(int(i)))

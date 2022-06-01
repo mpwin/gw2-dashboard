@@ -49,10 +49,10 @@ class CollectionFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.weapon = ListFrame(self, data.collection_list('weapon')).pack(side='left')
-        self.heavy = ListFrame(self, data.collection_list('heavy')).pack(side='left')
-        self.medium = ListFrame(self, data.collection_list('medium')).pack(side='left')
-        self.light = ListFrame(self, data.collection_list('light')).pack(side='left')
+        self.weapon = ListFrame(self, data.collections('weapon')).pack(side='left')
+        self.heavy = ListFrame(self, data.collections('heavy')).pack(side='left')
+        self.medium = ListFrame(self, data.collections('medium')).pack(side='left')
+        self.light = ListFrame(self, data.collections('light')).pack(side='left')
 
 
 class StandaloneFrame(ttk.Frame):
@@ -60,10 +60,10 @@ class StandaloneFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.weapon = ListFrame(self, data.skin_list('weapon')).pack(side='left')
-        self.heavy = ListFrame(self, data.skin_list('heavy')).pack(side='left')
-        self.medium = ListFrame(self, data.skin_list('medium')).pack(side='left')
-        self.light = ListFrame(self, data.skin_list('light')).pack(side='left')
+        self.weapon = ListFrame(self, data.skins('weapon')).pack(side='left')
+        self.heavy = ListFrame(self, data.skins('heavy')).pack(side='left')
+        self.medium = ListFrame(self, data.skins('medium')).pack(side='left')
+        self.light = ListFrame(self, data.skins('light')).pack(side='left')
 
 
 class ListFrame(ttk.Frame):

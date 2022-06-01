@@ -6,7 +6,7 @@ import time
 from operator import itemgetter
 
 
-r = redis.Redis()
+r = redis.Redis(decode_responses=True)
 url = 'https://api.guildwars2.com/v2'
 with open('key.txt') as f:
     key = f.readline().rstrip()
@@ -60,7 +60,7 @@ def create_collections():
             r.set(f'collection:{category}:{index}', collection['name'])
 
             for i in r.sinter('skins:standalone', f'skins:{category}'):
-                name = r.get('skin:%s' %(int(i))).decode()
+                name = r.get(f'skin:{i}')
                 if re.match((collection['name'] + ' '), name):
                     r.smove('skins:standalone', f'collection:{category}:{index}:skins', i)
 
@@ -68,7 +68,7 @@ def create_collections():
 def collections(category):
     l = []
     for i in r.smembers(f'collections:{category}'):
-        name = r.get(f'collection:{category}:{int(i)}')
+        name = r.get(f'collection:{category}:{i}')
         children = skins(category, i)
         l.append({'id': i, 'name': name, 'tag': '', 'children': children})
     l = sorted(l, key=itemgetter('name'))
@@ -77,13 +77,13 @@ def collections(category):
 
 def skins(category, collection=None):
     if collection:
-        ids = r.smembers(f'collection:{category}:{int(collection)}:skins')
+        ids = r.smembers(f'collection:{category}:{collection}:skins')
     else:
         ids = r.sinter('skins:standalone', f'skins:{category}')
 
     l = []
     for i in ids:
-        name = r.get('skin:%s' %(int(i)))
+        name = r.get(f'skin:{i}')
         tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
         l.append({'id': i, 'name': name, 'tag': tag})
     l = sorted(l, key=itemgetter('name'))

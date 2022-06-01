@@ -32,6 +32,7 @@ def get_skins():
         for skin in response.json():
             if not skin['name']: continue
             r.sadd('skins', skin['id'])
+            r.sadd('skins:standalone', skin['id'])
             r.set('skin:%s' %(skin['id']), skin['name'])
 
             if skin['type'] == 'Weapon':
@@ -58,10 +59,10 @@ def create_collections():
             r.sadd(f'collections:{category}', index)
             r.set(f'collection:{category}:{index}', collection['name'])
 
-            for i in r.smembers(f'skins:{category}'):
+            for i in r.sinter('skins:standalone', f'skins:{category}'):
                 name = r.get('skin:%s' %(int(i))).decode()
                 if re.match((collection['name'] + ' '), name):
-                    r.sadd(f'collection:{category}:{index}:skins', i)
+                    r.smove('skins:standalone', f'collection:{category}:{index}:skins', i)
 
 
 def collections(category):
@@ -80,7 +81,7 @@ def collections(category):
 
 def skins(category):
     l = []
-    for i in r.smembers(f'skins:{category}'):
+    for i in r.sinter('skins:standalone', f'skins:{category}'):
         name = r.get('skin:%s' %(int(i)))
         tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
         l.append({'id': i, 'name': name, 'tag': tag})

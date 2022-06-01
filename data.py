@@ -69,19 +69,20 @@ def collections(category):
     l = []
     for i in r.smembers(f'collections:{category}'):
         name = r.get(f'collection:{category}:{int(i)}')
-        children = []
-        for c in r.smembers(f'collection:{category}:{int(i)}:skins'):
-            cname = r.get(f'skin:{int(c)}')
-            ctag = 'unlocked' if r.sismember('skins:unlocked', c) else 'locked'
-            children.append({'id': c, 'name': cname, 'tag': ctag})
+        children = skins(category, i)
         l.append({'id': i, 'name': name, 'tag': '', 'children': children})
     l = sorted(l, key=itemgetter('name'))
     return l
 
 
-def skins(category):
+def skins(category, collection=None):
+    if collection:
+        ids = r.smembers(f'collection:{category}:{int(collection)}:skins')
+    else:
+        ids = r.sinter('skins:standalone', f'skins:{category}')
+
     l = []
-    for i in r.sinter('skins:standalone', f'skins:{category}'):
+    for i in ids:
         name = r.get('skin:%s' %(int(i)))
         tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
         l.append({'id': i, 'name': name, 'tag': tag})

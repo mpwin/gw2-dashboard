@@ -34,6 +34,7 @@ def dyes(rarity):
     l = []
     for i in r.smembers(f'dyes:{rarity}'):
         name = r.get(f'dye:{i}')
-        l.append({'id': i, 'name': name, 'tag': ''})
+        tag = 'unlocked' if r.sismember('dyes:unlocked', i) else 'locked'
+        l.append({'id': i, 'name': name, 'tag': tag})
     l = sorted(l, key=itemgetter('name'))
     return l

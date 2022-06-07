@@ -14,6 +14,7 @@ with open('key.txt') as f:
 def fetch():
     fetch_account_skins()
     fetch_skins()
+    fetch_account_dyes()
     fetch_dyes()
     create_collections()
 
@@ -51,6 +52,14 @@ def fetch_skins():
 
             print('%s | %s' %(skin['id'], skin['name']))
         time.sleep(2)
+
+
+def fetch_account_dyes():
+    response = requests.get(f'{url}/account/dyes', params={'access_token': key})
+    for i in response.json():
+        r.sadd('dyes:unlocked', i)
+    print('%s dyes unlocked.' %(r.scard('dyes:unlocked')))
+    time.sleep(2)
 
 
 def fetch_dyes():

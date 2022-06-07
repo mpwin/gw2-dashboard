@@ -12,6 +12,7 @@ class Dashboard(ttk.Frame):
         self.frames = {
             'collection': CollectionFrame(self),
             'standalone': StandaloneFrame(self),
+            'dye': DyeFrame(self),
             }
         self.current_frame = self.frames['collection']
 
@@ -36,6 +37,11 @@ class Nav(ttk.Frame):
             self,
             text='Standalone',
             command=lambda: self.show_frame('standalone'),
+            ).pack(side='top')
+        self.dye_button = ttk.Button(
+            self,
+            text='Dyes',
+            command=lambda: self.show_frame('dye'),
             ).pack(side='top')
 
     def show_frame(self, frame):
@@ -64,6 +70,14 @@ class StandaloneFrame(ttk.Frame):
         self.heavy = ListFrame(self, data.skins('heavy')).pack(side='left')
         self.medium = ListFrame(self, data.skins('medium')).pack(side='left')
         self.light = ListFrame(self, data.skins('light')).pack(side='left')
+
+
+class DyeFrame(ttk.Frame):
+
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        self.dyes = ListFrame(self, data.dyes()).pack(side='left')
 
 
 class ListFrame(ttk.Frame):

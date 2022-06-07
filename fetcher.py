@@ -14,6 +14,7 @@ with open('key.txt') as f:
 def fetch():
     fetch_account_skins()
     fetch_skins()
+    fetch_dyes()
     create_collections()
 
 
@@ -48,6 +49,16 @@ def fetch_skins():
 
             print('%s | %s' %(skin['id'], skin['name']))
         time.sleep(2)
+
+
+def fetch_dyes():
+    ids = requests.get(f'{url}/colors').json()
+    for i in range(0, len(ids), 200):
+        response = requests.get(f'{url}/colors', params={'ids': ','.join(map(str, ids[i:i+200]))})
+        for dye in response.json():
+            if not dye['name']: continue
+            r.sadd('dyes', dye['id'])
+            r.set('dye:%s' %(dye['id']), dye['name'])
 
 
 def create_collections():

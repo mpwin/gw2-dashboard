@@ -28,3 +28,12 @@ def skins(category, collection=None):
         l.append({'id': i, 'name': name, 'tag': tag})
     l = sorted(l, key=itemgetter('name'))
     return l
+
+
+def dyes():
+    l = []
+    for i in r.smembers('dyes'):
+        name = r.get(f'dye:{i}')
+        l.append({'id': i, 'name': name, 'tag': ''})
+    l = sorted(l, key=itemgetter('name'))
+    return l

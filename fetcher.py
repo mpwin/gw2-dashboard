@@ -31,7 +31,9 @@ def fetch_skins():
     for i in range(0, len(ids), 200):
         response = requests.get(f'{url}/skins', params={'ids': ','.join(map(str, ids[i:i+200]))})
         for skin in response.json():
-            if not skin['name']: continue
+            if not skin['name']:
+                continue
+
             r.sadd('skins', skin['id'])
             r.sadd('skins:standalone', skin['id'])
             r.set('skin:%s' %(skin['id']), skin['name'])
@@ -56,7 +58,9 @@ def fetch_dyes():
     for i in range(0, len(ids), 200):
         response = requests.get(f'{url}/colors', params={'ids': ','.join(map(str, ids[i:i+200]))})
         for dye in response.json():
-            if not dye['name']: continue
+            if not dye['name']:
+                continue
+
             r.sadd('dyes', dye['id'])
             r.set('dye:%s' %(dye['id']), dye['name'])
 

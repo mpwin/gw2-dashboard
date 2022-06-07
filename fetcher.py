@@ -64,6 +64,19 @@ def fetch_dyes():
             r.sadd('dyes', dye['id'])
             r.set('dye:%s' %(dye['id']), dye['name'])
 
+            if dye['categories']:
+                match dye['categories'][-1]:
+                    case 'Exclusive':
+                        r.sadd('dyes:exclusive', dye['id'])
+                    case 'Rare':
+                        r.sadd('dyes:rare', dye['id'])
+                    case 'Uncommon':
+                        r.sadd('dyes:uncommon', dye['id'])
+                    case 'Common':
+                        r.sadd('dyes:common', dye['id'])
+                    case 'Starter':
+                        r.sadd('dyes:starter', dye['id'])
+
 
 def create_collections():
     with open('collections.json') as f:

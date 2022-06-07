@@ -77,7 +77,11 @@ class DyeFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.dyes = ListFrame(self, data.dyes()).pack(side='left')
+        self.exclusive = ListFrame(self, data.dyes('exclusive')).pack(side='left')
+        self.rare = ListFrame(self, data.dyes('rare')).pack(side='left')
+        self.uncommon = ListFrame(self, data.dyes('uncommon')).pack(side='left')
+        self.common = ListFrame(self, data.dyes('common')).pack(side='left')
+        self.starter = ListFrame(self, data.dyes('starter')).pack(side='left')
 
 
 class ListFrame(ttk.Frame):

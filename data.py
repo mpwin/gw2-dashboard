@@ -30,9 +30,9 @@ def skins(category, collection=None):
     return l
 
 
-def dyes():
+def dyes(rarity):
     l = []
-    for i in r.smembers('dyes'):
+    for i in r.smembers(f'dyes:{rarity}'):
         name = r.get(f'dye:{i}')
         l.append({'id': i, 'name': name, 'tag': ''})
     l = sorted(l, key=itemgetter('name'))

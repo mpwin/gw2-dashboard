@@ -6,7 +6,6 @@ import time
 
 
 r = redis.Redis(decode_responses=True)
-url = 'https://api.guildwars2.com/v2'
 with open('key.txt') as f:
     key = f.readline().rstrip()
 
@@ -20,18 +19,18 @@ def fetch():
 
 
 def fetch_account_skins():
-    response = requests.get(f'{url}/account/skins', params={'access_token': key})
-    for i in response.json():
+    ids = _fetch('account/skins', auth=True)
+    for i in ids:
         r.sadd('skins:unlocked', i)
     print('%s skins unlocked.' %(r.scard('skins:unlocked')))
     time.sleep(2)
 
 
 def fetch_skins():
-    ids = requests.get(f'{url}/skins').json()
+    ids = _fetch('skins')
     for i in range(0, len(ids), 200):
-        response = requests.get(f'{url}/skins', params={'ids': ','.join(map(str, ids[i:i+200]))})
-        for skin in response.json():
+        group = _fetch('skins', ids[i:i+200])
+        for skin in group:
             if not skin['name']:
                 continue
 
@@ -55,18 +54,18 @@ def fetch_skins():
 
 
 def fetch_account_dyes():
-    response = requests.get(f'{url}/account/dyes', params={'access_token': key})
-    for i in response.json():
+    ids = _fetch('account/dyes', auth=True)
+    for i in ids:
         r.sadd('dyes:unlocked', i)
     print('%s dyes unlocked.' %(r.scard('dyes:unlocked')))
     time.sleep(2)
 
 
 def fetch_dyes():
-    ids = requests.get(f'{url}/colors').json()
+    ids = _fetch('colors')
     for i in range(0, len(ids), 200):
-        response = requests.get(f'{url}/colors', params={'ids': ','.join(map(str, ids[i:i+200]))})
-        for dye in response.json():
+        group = _fetch('colors', ids[i:i+200])
+        for dye in group:
             if not dye['name']:
                 continue
 
@@ -103,3 +102,15 @@ def create_collections():
                 name = r.get(f'skin:{i}')
                 if re.match((collection['name'] + ' '), name):
                     r.smove('skins:standalone', f'collection:{category}:{index}:skins', i)
+
+
+def _fetch(endpoint, ids=None, auth=False):
+    url = 'https://api.guildwars2.com/v2/' + endpoint
+    params = {}
+
+    if ids:
+        params['ids'] = ','.join(map(str, ids))
+    if auth:
+        params['access_token'] = key
+
+    return requests.get(url, params=params).json()

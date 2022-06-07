@@ -77,6 +77,9 @@ def fetch_dyes():
                     case 'Starter':
                         r.sadd('dyes:starter', dye['id'])
 
+            print('%s | %s' %(dye['id'], dye['name']))
+        time.sleep(2)
+
 
 def create_collections():
     with open('collections.json') as f:

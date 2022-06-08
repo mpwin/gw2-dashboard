@@ -17,7 +17,7 @@ def collections(category):
 
 def skins(category, collection=None):
     if collection:
-        ids = r.smembers(f'collection:{category}:{collection}:skins')
+        ids = r.zrange(f'collection:{category}:{collection}:skins', 0, -1)
     else:
         ids = r.sinter('skins:standalone', f'skins:{category}')
 
@@ -26,7 +26,8 @@ def skins(category, collection=None):
         name = r.get(f'skin:{i}:name')
         tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
         l.append({'id': i, 'name': name, 'tag': tag})
-    l = sorted(l, key=itemgetter('name'))
+    if not collection:
+        l = sorted(l, key=itemgetter('name'))
     return l
 
 

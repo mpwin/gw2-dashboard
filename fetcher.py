@@ -39,6 +39,8 @@ def fetch_skins():
             r.sadd('skins:standalone', skin['id'])
             r.set('skin:%s:name' %(skin['id']), skin['name'])
             r.hset('skin:%s' %(skin['id']), 'name', skin['name'])
+            if skin.get('details'):
+                r.hset('skin:%s' %(skin['id']), 'type', skin['details']['type'])
 
             if skin['type'] == 'Weapon':
                 r.sadd('skins:weapon', skin['id'])
@@ -117,7 +119,9 @@ def create_collections():
             for i in r.sinter('skins:standalone', f'skins:{category}'):
                 name = r.get(f'skin:{i}:name')
                 if re.match((collection['name'] + ' '), name):
-                    r.smove('skins:standalone', f'collection:{category}:{index}:skins', i)
+                    type = r.hget(f'skin:{i}', 'type')
+                    r.zadd(f'collection:{category}:{index}:skins', {i: _score(type)})
+                    r.srem('skins:standalone', i)
 
 
 def _fetch(endpoint, ids=None, auth=False):
@@ -130,3 +134,35 @@ def _fetch(endpoint, ids=None, auth=False):
         params['access_token'] = key
 
     return requests.get(url, params=params).json()
+
+
+def _score(type):
+    score = {
+        'Sword': 1,
+        'Hammer': 2,
+        'Longbow': 3,
+        'Shortbow': 4,
+        'Axe': 5,
+        'Dagger': 6,
+        'Greatsword': 7,
+        'Mace': 8,
+        'Pistol': 9,
+        'Rifle': 10,
+        'Scepter': 11,
+        'Staff': 12,
+        'Focus': 13,
+        'Torch': 14,
+        'Warhorn': 15,
+        'Shield': 16,
+        'Spear': 17,
+        'Speargun': 18,
+        'Trident': 19,
+        'Helm': 1,
+        'Shoulders': 2,
+        'Coat': 3,
+        'Gloves': 4,
+        'Leggings': 5,
+        'Boots': 6,
+        }
+
+    return score[type]

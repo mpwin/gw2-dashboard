@@ -37,7 +37,8 @@ def fetch_skins():
 
             r.sadd('skins', skin['id'])
             r.sadd('skins:standalone', skin['id'])
-            r.set('skin:%s' %(skin['id']), skin['name'])
+            r.set('skin:%s:name' %(skin['id']), skin['name'])
+            r.hset('skin:%s' %(skin['id']), 'name', skin['name'])
 
             if skin['type'] == 'Weapon':
                 r.sadd('skins:weapon', skin['id'])
@@ -114,7 +115,7 @@ def create_collections():
             r.set(f'collection:{category}:{index}', collection['name'])
 
             for i in r.sinter('skins:standalone', f'skins:{category}'):
-                name = r.get(f'skin:{i}')
+                name = r.get(f'skin:{i}:name')
                 if re.match((collection['name'] + ' '), name):
                     r.smove('skins:standalone', f'collection:{category}:{index}:skins', i)
 

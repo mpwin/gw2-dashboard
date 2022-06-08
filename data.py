@@ -23,7 +23,7 @@ def skins(category, collection=None):
 
     l = []
     for i in ids:
-        name = r.get(f'skin:{i}')
+        name = r.get(f'skin:{i}:name')
         tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
         l.append({'id': i, 'name': name, 'tag': tag})
     l = sorted(l, key=itemgetter('name'))

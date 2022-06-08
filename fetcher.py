@@ -15,6 +15,7 @@ def fetch():
     fetch_skins()
     fetch_account_dyes()
     fetch_dyes()
+    fetch_minis()
     create_collections()
 
 
@@ -86,6 +87,20 @@ def fetch_dyes():
                         r.sadd('dyes:starter', dye['id'])
 
             print('%s | %s' %(dye['id'], dye['name']))
+        time.sleep(2)
+
+
+def fetch_minis():
+    ids = _fetch('minis')
+    for i in range(0, len(ids), 200):
+        group = _fetch('minis', ids[i:i+200])
+        for mini in group:
+            if not mini['name']:
+                continue
+
+            r.sadd('minis', mini['id'])
+            r.set('mini:%s' %(mini['id']), mini['name'])
+            print('%s | %s' %(mini['id'], mini['name']))
         time.sleep(2)
 
 

@@ -13,6 +13,7 @@ class Dashboard(ttk.Frame):
             'collection': CollectionFrame(self),
             'standalone': StandaloneFrame(self),
             'dye': DyeFrame(self),
+            'mini': MiniFrame(self),
             }
         self.current_frame = self.frames['collection']
 
@@ -42,6 +43,11 @@ class Nav(ttk.Frame):
             self,
             text='Dyes',
             command=lambda: self.show_frame('dye'),
+            ).pack(side='top')
+        self.mini_button = ttk.Button(
+            self,
+            text='Minis',
+            command=lambda: self.show_frame('mini'),
             ).pack(side='top')
 
     def show_frame(self, frame):
@@ -82,6 +88,14 @@ class DyeFrame(ttk.Frame):
         self.uncommon = ListFrame(self, data.dyes('uncommon')).pack(side='left')
         self.common = ListFrame(self, data.dyes('common')).pack(side='left')
         self.starter = ListFrame(self, data.dyes('starter')).pack(side='left')
+
+
+class MiniFrame(ttk.Frame):
+
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        self.minis = ListFrame(self, data.minis()).pack(side='left')
 
 
 class ListFrame(ttk.Frame):

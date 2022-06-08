@@ -38,3 +38,12 @@ def dyes(rarity):
         l.append({'id': i, 'name': name, 'tag': tag})
     l = sorted(l, key=itemgetter('name'))
     return l
+
+
+def minis():
+    l = []
+    for i in r.smembers('minis'):
+        name = r.get(f'mini:{i}')
+        l.append({'id': i, 'name': name, 'tag': ''})
+    l = sorted(l, key=itemgetter('name'))
+    return l

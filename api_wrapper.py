@@ -24,13 +24,19 @@ class Wrapper:
         def __next__(self):
             if self.page >= self.page_total:
                 raise StopIteration
-            params = {'page': self.page, 'page_size': 200}
-            response = requests.get(self.endpoint, params=params)
+            response = requests.get(self.endpoint, params=_params(page=self.page))
             self.page += 1
             return response.json()
 
 
 def _get_page_total(endpoint):
-    params = {'page': 0, 'page_size': 200}
-    response = requests.get(endpoint, params=params)
+    response = requests.get(endpoint, params=_params())
     return int(response.headers.get('X-Page-Total'))
+
+
+def _params(**keys):
+    params = {
+        'page': keys.get('page') or 0,
+        'page_size': keys.get('page_size') or 200,
+        }
+    return params

@@ -8,9 +8,7 @@ class Wrapper:
 
     def skins(self):
         endpoint = self.url + 'skins'
-        params = {'page': 0, 'page_size': 200}
-        response = requests.get(endpoint, params=params)
-        page_total = int(response.headers['X-Page-Total'])
+        page_total = _get_page_total(endpoint)
         return self.PageIterator(endpoint, page_total)
 
 
@@ -30,3 +28,9 @@ class Wrapper:
             response = requests.get(self.endpoint, params=params)
             self.page += 1
             return response.json()
+
+
+def _get_page_total(endpoint):
+    params = {'page': 0, 'page_size': 200}
+    response = requests.get(endpoint, params=params)
+    return int(response.headers.get('X-Page-Total'))

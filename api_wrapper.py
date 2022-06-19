@@ -8,14 +8,13 @@ class Wrapper:
 
     def skins(self):
         endpoint = self.url + 'skins'
-        page_total = _get_page_total(endpoint)
-        return self.PageIterator(endpoint, page_total)
+        return self.PageIterator(endpoint)
 
 
     class PageIterator:
-        def __init__(self, endpoint, page_total):
+        def __init__(self, endpoint):
             self.endpoint = endpoint
-            self.page_total = page_total
+            self.page_total = _get_page_total(endpoint)
             self.page = 0
 
         def __iter__(self):

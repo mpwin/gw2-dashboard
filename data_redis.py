@@ -6,6 +6,16 @@ db = redis.Redis(decode_responses=True)
 
 class Skin:
 
+    def __init__(self, i):
+        data = db.hgetall(f'skin:{i}')
+        self.name = data.get('name')
+        self.type = data.get('type')
+
+    @classmethod
+    def get(cls, category):
+        ids = db.smembers(f'skins:{category}')
+        return [Skin(i) for i in ids]
+
     @classmethod
     def save(cls, data):
         if not data.get('id') or not data.get('name'):

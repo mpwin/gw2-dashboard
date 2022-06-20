@@ -3,6 +3,7 @@ import time
 
 
 class Wrapper:
+
     def __init__(self, api_key=None):
         self.api_key = api_key
         self.url = 'https://api.guildwars2.com/v2/'
@@ -12,6 +13,7 @@ class Wrapper:
 
 
     class ObjectIterator:
+
         def __init__(self, endpoint):
             self.objects = []
             self.page = self.PageIterator(endpoint)
@@ -30,6 +32,7 @@ class Wrapper:
 
 
         class PageIterator:
+
             def __init__(self, endpoint):
                 self.endpoint = endpoint
                 self.page_total = self._get_page_total(endpoint)

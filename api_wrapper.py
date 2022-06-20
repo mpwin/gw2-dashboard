@@ -1,4 +1,5 @@
 import requests
+import time
 
 
 class Wrapper:
@@ -41,6 +42,7 @@ class Wrapper:
                 if self.page < self.page_total:
                     response = requests.get(self.endpoint, params=self._params(page=self.page))
                     self.page += 1
+                    time.sleep(2)
                     return response.json()
                 else:
                     raise StopIteration

@@ -1,19 +1,16 @@
-import redis
-
-
-db = redis.Redis(decode_responses=True) 
+import db_redis as db
 
 
 class Skin:
 
     def __init__(self, i):
-        data = db.hgetall(f'skin:{i}')
+        data = db.get('skin', i)
         self.name = data.get('name')
         self.type = data.get('type')
 
     @classmethod
     def get(cls, category):
-        ids = db.smembers(f'skins:{category}')
+        ids = db.ids('skin', category)
         return [Skin(i) for i in ids]
 
     @classmethod
@@ -21,23 +18,21 @@ class Skin:
         if not data.get('id') or not data.get('name'):
             return
 
-        db.sadd('skins', data['id'])
-        db.sadd('skins:standalone', data['id'])
-
         hash = {
             'name': data['name'],
             'type': data.get('details', {}).get('type', ''),
             }
-        db.hmset('skin:%s' %(data['id']), hash)
+        db.set('skin', data['id'], hash)
+        db.tag('skin', data['id'], 'standalone')
 
         match data.get('type'):
             case 'Weapon':
-                db.sadd('skins:weapon', data['id'])
+                db.tag('skin', data['id'], 'weapon')
             case 'Armor':
                 match data.get('details', {}).get('weight_class'):
                     case 'Heavy':
-                        db.sadd('skins:heavy', data['id'])
+                        db.tag('skin', data['id'], 'heavy')
                     case 'Medium':
-                        db.sadd('skins:medium', data['id'])
+                        db.tag('skin', data['id'], 'medium')
                     case 'Light':
-                        db.sadd('skins:light', data['id'])
+                        db.tag('skin', data['id'], 'light')

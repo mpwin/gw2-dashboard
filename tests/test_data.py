@@ -2,7 +2,7 @@ import json
 import unittest
 from unittest.mock import patch
 
-import data_redis as data
+import data
 
 
 class TestData(unittest.TestCase):
@@ -13,7 +13,7 @@ class TestData(unittest.TestCase):
         return data[name][str(_id)]
 
     def test_skin_init(self):
-        with patch('data_redis.db') as mock_db:
+        with patch('data.db') as mock_db:
             mock_db.get.side_effect = self.get_data
             skin = data.Skin(10)
             self.assertIsInstance(skin, data.Skin)
@@ -21,7 +21,7 @@ class TestData(unittest.TestCase):
             self.assertEqual(skin.type, 'Leggings')
 
     def test_class_get(self):
-        with patch('data_redis.db') as mock_db:
+        with patch('data.db') as mock_db:
             skins = data.Skin.get('weapon')
             self.assertIsInstance(skins, list)
             self.assertTrue(all(isinstance(i, data.Skin) for i in skins))

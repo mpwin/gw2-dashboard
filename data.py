@@ -1,50 +1,38 @@
-import redis
-from operator import itemgetter
+import db_redis as db
 
 
-r = redis.Redis(decode_responses=True)
+class Skin:
 
+    def __init__(self, i):
+        data = db.get('skin', i)
+        self.name = data.get('name')
+        self.type = data.get('type')
 
-def collections(category):
-    l = []
-    for i in r.smembers(f'collections:{category}'):
-        name = r.get(f'collection:{category}:{i}')
-        children = skins(category, i)
-        l.append({'id': i, 'name': name, 'tag': '', 'children': children})
-    l = sorted(l, key=itemgetter('name'))
-    return l
+    @classmethod
+    def get(cls, category):
+        ids = db.ids('skin', category)
+        return [Skin(i) for i in ids]
 
+    @classmethod
+    def save(cls, data):
+        if not data.get('id') or not data.get('name'):
+            return
 
-def skins(category, collection=None):
-    if collection:
-        ids = r.zrange(f'collection:{category}:{collection}:skins', 0, -1)
-    else:
-        ids = r.sinter('skins:standalone', f'skins:{category}')
+        hash = {
+            'name': data['name'],
+            'type': data.get('details', {}).get('type', ''),
+            }
+        db.set('skin', data['id'], hash)
+        db.tag('skin', data['id'], 'standalone')
 
-    l = []
-    for i in ids:
-        name = r.get(f'skin:{i}:name')
-        tag = 'unlocked' if r.sismember('skins:unlocked', i) else 'locked'
-        l.append({'id': i, 'name': name, 'tag': tag})
-    if not collection:
-        l = sorted(l, key=itemgetter('name'))
-    return l
-
-
-def dyes(rarity):
-    l = []
-    for i in r.smembers(f'dyes:{rarity}'):
-        name = r.get(f'dye:{i}')
-        tag = 'unlocked' if r.sismember('dyes:unlocked', i) else 'locked'
-        l.append({'id': i, 'name': name, 'tag': tag})
-    l = sorted(l, key=itemgetter('name'))
-    return l
-
-
-def minis():
-    l = []
-    for i in r.smembers('minis'):
-        name = r.get(f'mini:{i}')
-        l.append({'id': i, 'name': name, 'tag': ''})
-    l = sorted(l, key=itemgetter('name'))
-    return l
+        match data.get('type'):
+            case 'Weapon':
+                db.tag('skin', data['id'], 'weapon')
+            case 'Armor':
+                match data.get('details', {}).get('weight_class'):
+                    case 'Heavy':
+                        db.tag('skin', data['id'], 'heavy')
+                    case 'Medium':
+                        db.tag('skin', data['id'], 'medium')
+                    case 'Light':
+                        db.tag('skin', data['id'], 'light')

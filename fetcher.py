@@ -1,6 +1,14 @@
-import api_wrapper as api
+import api_wrapper
 import data
 
 
+api = api_wrapper.Wrapper()
+
+
 def fetch():
-    pass
+    fetch_skins()
+
+
+def fetch_skins():
+    for skin in api.skins():
+        data.Skin.save(skin)

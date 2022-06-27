@@ -10,12 +10,12 @@ class Dashboard(ttk.Frame):
 
         self.nav = Nav(self)
         self.frames = {
-            'collection': CollectionFrame(self),
+            # 'collection': CollectionFrame(self),
             'standalone': StandaloneFrame(self),
-            'dye': DyeFrame(self),
-            'mini': MiniFrame(self),
+            # 'dye': DyeFrame(self),
+            # 'mini': MiniFrame(self),
             }
-        self.current_frame = self.frames['collection']
+        self.current_frame = self.frames['standalone']
 
         self.pack()
         self.nav.pack(side='left', fill='y')
@@ -72,10 +72,10 @@ class StandaloneFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.weapon = ListFrame(self, data.skins('weapon')).pack(side='left')
-        self.heavy = ListFrame(self, data.skins('heavy')).pack(side='left')
-        self.medium = ListFrame(self, data.skins('medium')).pack(side='left')
-        self.light = ListFrame(self, data.skins('light')).pack(side='left')
+        self.weapon = ListFrame(self, data.Skin.get('weapon')).pack(side='left')
+        self.heavy = ListFrame(self, data.Skin.get('heavy')).pack(side='left')
+        self.medium = ListFrame(self, data.Skin.get('medium')).pack(side='left')
+        self.light = ListFrame(self, data.Skin.get('light')).pack(side='left')
 
 
 class DyeFrame(ttk.Frame):
@@ -113,7 +113,7 @@ class ListFrame(ttk.Frame):
         self.scrollbar.pack(side='right', fill='y')
 
         for item in items:
-            self.treeview.insert('', 'end', item['id'], text=item['name'], tags=item['tag'])
+            self.treeview.insert('', 'end', text=item.name, tags='')
             for child in (item.get('children') or []):
                 self.treeview.insert(item['id'], 'end', child['id'],
                                      text=child['name'], tags=child['tag'])

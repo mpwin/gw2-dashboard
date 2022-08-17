@@ -21,6 +21,11 @@ def tag(name, _id, tag):
     db.sadd(f'{plural[name]}:{tag}', _id)
 
 
+def create_sorted_set(_class, name, sets):
+    _list = sorted(db.sinter(sets), key=lambda i: get(_class, i)['name'])
+    db.zadd(name, {i: score for score, i in enumerate(_list)})
+
+
 plural = {
     'skin': 'skins',
     }

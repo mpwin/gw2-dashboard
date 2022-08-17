@@ -36,3 +36,22 @@ class Skin:
                         db.tag('skin', data['id'], 'medium')
                     case 'Light':
                         db.tag('skin', data['id'], 'light')
+
+    @classmethod
+    def setup(cls):
+        db.create_sorted_set(
+            'skin', 'skins:standalone_weapon',
+            ('skins:standalone', 'skins:weapon'),
+            )
+        db.create_sorted_set(
+            'skin', 'skins:standalone_heavy',
+            ('skins:standalone', 'skins:heavy'),
+            )
+        db.create_sorted_set(
+            'skin', 'skins:standalone_medium',
+            ('skins:standalone', 'skins:medium'),
+            )
+        db.create_sorted_set(
+            'skin', 'skins:standalone_light',
+            ('skins:standalone', 'skins:light'),
+            )

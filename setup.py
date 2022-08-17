@@ -7,6 +7,7 @@ api = api_wrapper.Wrapper()
 
 def setup():
     fetch_skins()
+    data.Skin.setup()
 
 
 def fetch_skins():

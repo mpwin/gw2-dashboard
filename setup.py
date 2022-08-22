@@ -7,12 +7,12 @@ api = api_wrapper.Wrapper()
 
 def setup():
     fetch_skins()
-    data.Skin.setup()
+    data.skins.setup()
 
 
 def fetch_skins():
     for skin in api.skins():
-        data.Skin.save(skin)
+        data.skins.save(skin)
 
 
 if __name__ == '__main__':

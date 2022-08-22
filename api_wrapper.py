@@ -8,6 +8,10 @@ class Wrapper:
         self.api_key = api_key
         self.url = 'https://api.guildwars2.com/v2/'
 
+    def account_skins(self):
+        headers = {'Authorization': f'Bearer {self.api_key}'}
+        return requests.get(self.url + 'account/skins', headers=headers).json()
+
     def skins(self):
         return self.ObjectIterator(self.url + 'skins')
 

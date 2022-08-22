@@ -3,7 +3,10 @@ from . import db
 
 def get(_id):
     data = db.get('skins', _id)
-    return {'id': _id, 'name': data['name']}
+    data['id'] = _id
+    if db.in_set('skins', 'unlocked', _id):
+        data['tags'] = 'unlocked'
+    return data
 
 
 def get_set(name):
@@ -33,6 +36,10 @@ def save(data):
                     db.add_to_set('skins', 'medium', data['id'])
                 case 'Light':
                     db.add_to_set('skins', 'light', data['id'])
+
+
+def save_unlocked(ids):
+    db.add_to_set('skins', 'unlocked', *ids)
 
 
 def setup():

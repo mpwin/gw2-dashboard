@@ -18,12 +18,16 @@ def get_set(scope, name):
             return db.zrange(name, 0, -1)
 
 
+def in_set(scope, name, data):
+    return db.sismember(f'{scope}:{name}', data)
+
+
 def save(scope, _id, data):
     db.hmset('%s:%s' %(scope, _id), data)
 
 
-def add_to_set(scope, _set, _id):
-    db.sadd(':'.join((scope, _set)), _id)
+def add_to_set(scope, name, *data):
+    db.sadd(f'{scope}:{name}', *data)
 
 
 def create_sorted_set(scope, name, sets):

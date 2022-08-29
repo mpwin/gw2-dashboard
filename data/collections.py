@@ -1,5 +1,18 @@
 import json
 
+from . import db
+
+
+def save(data):
+    hash = {'name': data['name'], 'note': data['note']}
+    db.save(f"collections:{data['category']}", data['id'], hash)
+    db.add_to_sorted_set(f"collections:{data['category']}", data['id'])
+
+
+def setup():
+    for collection in collections_json():
+        save(collection)
+
 
 def collections_json():
     return CollectionIterator()
@@ -32,5 +45,5 @@ class CollectionIterator:
         else:
             return None
 
-        return [dict(collection, category=category, index=index)
+        return [dict(collection, id=index, category=category)
                 for index, collection in enumerate(self.data[category])]

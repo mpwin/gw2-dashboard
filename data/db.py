@@ -30,6 +30,12 @@ def add_to_set(scope, name, *data):
     db.sadd(f'{scope}:{name}', *data)
 
 
+def add_to_sorted_set(name, _id, score=None):
+    if not score:
+        score = _id
+    db.zadd(name, {_id: score})
+
+
 def create_sorted_set(scope, name, sets):
     _list = sorted(db.sinter(sets), key=lambda i: get(scope, i)['name'])
     db.zadd(name, {i: score for score, i in enumerate(_list)})

@@ -7,6 +7,8 @@ def setup():
 
     fetch_skins()
     fetch_account_skins()
+
+    data.collections.setup()
     data.skins.setup()
 
     print('Setup complete.')

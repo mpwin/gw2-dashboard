@@ -10,7 +10,7 @@ class Dashboard(ttk.Frame):
 
         self.nav = Nav(self)
         self.frames = {
-            # 'collection': CollectionFrame(self),
+            'collection': CollectionFrame(self),
             'standalone': StandaloneFrame(self),
             # 'dye': DyeFrame(self),
             # 'mini': MiniFrame(self),
@@ -61,10 +61,10 @@ class CollectionFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.weapon = ListFrame(self, data.collections('weapon')).pack(side='left')
-        self.heavy = ListFrame(self, data.collections('heavy')).pack(side='left')
-        self.medium = ListFrame(self, data.collections('medium')).pack(side='left')
-        self.light = ListFrame(self, data.collections('light')).pack(side='left')
+        self.weapon = ListFrame(self, data.collections.get_set('weapon')).pack(side='left')
+        self.heavy = ListFrame(self, data.collections.get_set('heavy')).pack(side='left')
+        self.medium = ListFrame(self, data.collections.get_set('medium')).pack(side='left')
+        self.light = ListFrame(self, data.collections.get_set('light')).pack(side='left')
 
 
 class StandaloneFrame(ttk.Frame):

@@ -3,6 +3,14 @@ import json
 from . import db
 
 
+def get(category, _id):
+    return db.get(f'collections:{category}', _id)
+
+
+def get_set(name):
+    return [get(name, _id) for _id in db.get_set('collections', name)]
+
+
 def save(data):
     hash = {'name': data['name'], 'note': data['note']}
     db.save(f"collections:{data['category']}", data['id'], hash)

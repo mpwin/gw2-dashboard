@@ -6,11 +6,20 @@ from . import skins
 
 
 def get(category, _id):
-    return db.get(f'collections:{category}', _id)
+    collection = db.get(f'collections:{category}', _id)
+    collection['category'] = category
+    collection['id'] = _id
+    collection['children'] = get_skins_for(collection)
+    return collection
 
 
 def get_set(name):
     return [get(name, _id) for _id in db.get_set('collections', name)]
+
+
+def get_skins_for(collection):
+    key = f"collections:{collection['category']}:{collection['id']}:skins"
+    return [skins.get(i) for i in db.r.zrange(key, 0, -1)]
 
 
 def save(data):

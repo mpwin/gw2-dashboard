@@ -1,6 +1,8 @@
 import json
+import re
 
 from . import db
+from . import skins
 
 
 def get(category, _id):
@@ -18,8 +20,32 @@ def save(data):
 
 
 def setup():
+
+    def collect_skins_for(collection):
+        l = []
+        for skin in skins.standalone(collection['category']):
+            if re.match(collection['name'] + ' ', skin['name']):
+                l.append(skin)
+        return l
+
+    def save_skins_to_collection(skins, collection):
+        key = f"collections:{collection['category']}:{collection['id']}:skins"
+        for skin in skins:
+            db.r.zadd(key, {skin['id']: score[skin['type']]})
+            db.r.srem('skins:standalone', skin['id'])
+
+    types = [
+        'Sword', 'Hammer', 'Longbow', 'Shortbow', 'Axe',
+        'Dagger', 'Greatsword', 'Mace', 'Pistol', 'Rifle',
+        'Scepter', 'Staff', 'Focus', 'Torch', 'Warhorn',
+        'Shield', 'Spear', 'Speargun', 'Trident', 'Helm',
+        'Shoulders', 'Coat', 'Gloves', 'Leggings', 'Boots',
+        ]
+    score = dict(zip(types, range(len(types))))
+
     for collection in collections_json():
         save(collection)
+        save_skins_to_collection(collect_skins_for(collection), collection)
 
 
 def collections_json():

@@ -14,12 +14,12 @@ def get(category, _id):
 
 
 def get_set(name):
-    return [get(name, _id) for _id in db.get_set('collections', name)]
+    return [get(name, _id) for _id in db.ids(f'collections:{name}')]
 
 
 def get_skins_for(collection):
     key = f"collections:{collection['category']}:{collection['id']}:skins"
-    return [skins.get(i) for i in db.r.zrange(key, 0, -1)]
+    return [skins.get(i) for i in db.ids(key)]
 
 
 def save(data):

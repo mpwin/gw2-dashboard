@@ -4,18 +4,16 @@ import redis
 r = redis.Redis(decode_responses=True)
 
 
-def get(scope, _id):
-    return r.hgetall(':'.join((scope, _id)))
-
-
-def get_set(scope, name):
-    name = ':'.join((scope, name))
-
+def ids(name):
     match r.type(name):
         case 'set':
             return r.smembers(name)
         case 'zset':
             return r.zrange(name, 0, -1)
+
+
+def get(scope, _id):
+    return r.hgetall(':'.join((scope, _id)))
 
 
 def in_set(scope, name, data):

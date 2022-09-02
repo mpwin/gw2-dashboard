@@ -10,14 +10,14 @@ def get(_id):
 
 
 def get_set(name):
-    return [get(_id) for _id in db.get_set('skins', name)]
+    return [get(_id) for _id in db.ids(f'skins:{name}')]
 
 
 def standalone(category=None):
     if category:
         ids = db.r.sinter('skins:standalone', f'skins:{category}')
     else:
-        ids = db.r.smembers('skins:standalone')
+        ids = db.ids('skins:standalone')
     return [get(i) for i in ids]
 
 

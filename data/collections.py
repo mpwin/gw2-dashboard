@@ -10,6 +10,8 @@ def get(category, _id):
     collection['category'] = category
     collection['id'] = _id
     collection['children'] = get_skins_for(collection)
+    if is_unlocked(category, _id):
+        collection['tags'] = 'unlocked'
     return collection
 
 
@@ -20,6 +22,12 @@ def get_set(name):
 def get_skins_for(collection):
     key = f"collections:{collection['category']}:{collection['id']}:skins"
     return [skins.get(i) for i in db.ids(key)]
+
+
+def is_unlocked(class_, id_):
+    key = f"collections:{class_}:{id_}:skins"
+    unlocked = [db.r.sismember('skins:unlocked', i) for i in db.ids(key)]
+    return True if all(unlocked) else False
 
 
 def save(data):

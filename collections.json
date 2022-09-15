@@ -88,5 +88,17 @@
             "name": "Snapdragon",
             "note": "Sylvari Cultural Tier 1"
         }
+    ],
+
+
+    "excluded": [
+        {
+            "id": "5004",
+            "name": "Krytan Harpoon"
+        },
+        {
+            "id": "5170",
+            "name": "Krytan Harpoon Gun"
+        }
     ]
 }

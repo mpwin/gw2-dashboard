@@ -41,6 +41,8 @@ def setup():
     def collect_skins_for(collection):
         l = []
         for skin in skins.standalone(collection['category']):
+            if skin['id'] in excluded_from_collections:
+                continue
             if re.match(collection['name'] + ' ', skin['name']):
                 l.append(skin)
         return l
@@ -51,6 +53,11 @@ def setup():
             db.r.zadd(key, {skin['id']: score[skin['type']]})
             db.r.srem('skins:standalone', skin['id'])
 
+    def get_excluded():
+        with open('collections.json') as f:
+            excluded = json.load(f)['excluded']
+        return {i['id'] for i in excluded}
+
     types = [
         'Sword', 'Hammer', 'Longbow', 'Shortbow', 'Axe',
         'Dagger', 'Greatsword', 'Mace', 'Pistol', 'Rifle',
@@ -59,6 +66,7 @@ def setup():
         'Shoulders', 'Coat', 'Gloves', 'Leggings', 'Boots',
         ]
     score = dict(zip(types, range(len(types))))
+    excluded_from_collections = get_excluded()
 
     for collection in collections_json():
         save(collection)

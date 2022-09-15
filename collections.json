@@ -1,6 +1,18 @@
 {
     "weapon": [
         {
+            "name": "Adamant Guard",
+            "note": "Charr Cultural Tier 3"
+        },
+        {
+            "name": "Aureate",
+            "note": "Human Cultural Tier 2"
+        },
+        {
+            "name": "Flame",
+            "note": "Charr Cultural Tier 2"
+        },
+        {
             "name": "Glyphic",
             "note": "Asura and Sylvari Cultural Tier 1"
         },
@@ -9,12 +21,36 @@
             "note": "Human Cultural Tier 1"
         },
         {
+            "name": "Norn",
+            "note": "Norn Cultural Tier 2"
+        },
+        {
+            "name": "Peacemaker's",
+            "note": "Asura Cultural Tier 3"
+        },
+        {
+            "name": "Seraph",
+            "note": "Human Cultural Tier 3"
+        },
+        {
             "name": "Shiverpeak",
             "note": "Norn Cultural Tier 1"
         },
         {
             "name": "Steam",
             "note": "Charr Cultural Tier 1"
+        },
+        {
+            "name": "Verdant",
+            "note": "Asura and Sylvari Cultural Tier 2"
+        },
+        {
+            "name": "Warden",
+            "note": "Sylvari Cultural Tier 3"
+        },
+        {
+            "name": "Wolfborn",
+            "note": "Norn Cultural Tier 3"
         }
     ],
 
@@ -25,6 +61,10 @@
             "note": "Sylvari Cultural Tier 1"
         },
         {
+            "name": "Avenger's",
+            "note": "Human Cultural Tier 2"
+        },
+        {
             "name": "Commander's",
             "note": "Human Cultural Tier 1"
         },
@@ -33,17 +73,61 @@
             "note": "Norn Cultural Tier 1"
         },
         {
+            "name": "Dreadnought",
+            "note": "Charr Cultural Tier 3"
+        },
+        {
+            "name": "Eagle",
+            "note": "Norn Cultural Tier 2"
+        },
+        {
+            "name": "Electromagnetic",
+            "note": "Asura Cultural Tier 3"
+        },
+        {
+            "name": "Electroplated",
+            "note": "Asura Cultural Tier 2"
+        },
+        {
             "name": "Galvanic",
             "note": "Asura Cultural Tier 1"
         },
         {
+            "name": "Legion",
+            "note": "Charr Cultural Tier 2"
+        },
+        {
+            "name": "Oaken",
+            "note": "Sylvari Cultural Tier 3"
+        },
+        {
+            "name": "Protector's",
+            "note": "Human Cultural Tier 3"
+        },
+        {
+            "name": "Stag",
+            "note": "Norn Cultural Tier 3"
+        },
+        {
             "name": "Warband",
             "note": "Charr Cultural Tier 1"
+        },
+        {
+            "name": "Warden",
+            "note": "Sylvari Cultural Tier 2"
         }
     ],
 
 
     "medium": [
+        {
+            "name": "Assassin's",
+            "note": "Human Cultural Tier 3"
+        },
+        {
+            "name": "Auxiliary Powered",
+            "note": "Asura Cultural Tier 2"
+        },
         {
             "name": "Drover",
             "note": "Charr Cultural Tier 1"
@@ -53,16 +137,48 @@
             "note": "Sylvari Cultural Tier 1"
         },
         {
+            "name": "Falconer's",
+            "note": "Human Cultural Tier 2"
+        },
+        {
+            "name": "Firstborn",
+            "note": "Sylvari Cultural Tier 3"
+        },
+        {
+            "name": "Nightshade",
+            "note": "Sylvari Cultural Tier 2"
+        },
+        {
+            "name": "Predatory",
+            "note": "Norn Cultural Tier 2"
+        },
+        {
             "name": "Protean",
             "note": "Asura Cultural Tier 1"
+        },
+        {
+            "name": "Prototype",
+            "note": "Asura Cultural Tier 3"
         },
         {
             "name": "Scout's",
             "note": "Human Cultural Tier 1"
         },
         {
+            "name": "Trapper",
+            "note": "Charr Cultural Tier 3"
+        },
+        {
+            "name": "Wolf",
+            "note": "Norn Cultural Tier 3"
+        },
+        {
             "name": "Wolfborn",
             "note": "Norn Cultural Tier 1"
+        },
+        {
+            "name": "Wrangler",
+            "note": "Charr Cultural Tier 2"
         }
     ],
 
@@ -73,12 +189,48 @@
             "note": "Asura Cultural Tier 1"
         },
         {
+            "name": "Archon",
+            "note": "Charr Cultural Tier 2"
+        },
+        {
+            "name": "Aristocrat's",
+            "note": "Human Cultural Tier 2"
+        },
+        {
+            "name": "Dryad",
+            "note": "Sylvari Cultural Tier 3"
+        },
+        {
+            "name": "Genius",
+            "note": "Asura Cultural Tier 2"
+        },
+        {
+            "name": "Havroun",
+            "note": "Norn Cultural Tier 2"
+        },
+        {
             "name": "Invoker's",
             "note": "Charr Cultural Tier 1"
         },
         {
+            "name": "Lupine",
+            "note": "Norn Cultural Tier 3"
+        },
+        {
+            "name": "Magus",
+            "note": "Charr Cultural Tier 3"
+        },
+        {
+            "name": "Orchid",
+            "note": "Sylvari Cultural Tier 2"
+        },
+        {
             "name": "Researcher's",
             "note": "Human Cultural Tier 1"
+        },
+        {
+            "name": "Savant",
+            "note": "Asura Cultural Tier 3"
         },
         {
             "name": "Sheepskin",
@@ -87,6 +239,10 @@
         {
             "name": "Snapdragon",
             "note": "Sylvari Cultural Tier 1"
+        },
+        {
+            "name": "Sorcerer's",
+            "note": "Human Cultural Tier 3"
         }
     ],
 

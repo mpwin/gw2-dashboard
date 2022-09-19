@@ -249,12 +249,112 @@
 
     "excluded": [
         {
+            "id": "5214",
+            "name": "Flame Harpoon"
+        },
+        {
+            "id": "4753",
+            "name": "Flame Trident"
+        },
+        {
+            "id": "9479",
+            "name": "Flame Dominion Torch"
+        },
+        {
+            "id": "9289",
+            "name": "Flame Legion Combat Blade"
+        },
+        {
+            "id": "9305",
+            "name": "Flame Legion Flamesaw"
+        },
+        {
+            "id": "9301",
+            "name": "Flame Legion Longshot"
+        },
+        {
+            "id": "9306",
+            "name": "Flame Legion Pistol"
+        },
+        {
+            "id": "9283",
+            "name": "Flame Legion Staff"
+        },
+        {
+            "id": "10065",
+            "name": "Flame Serpent Axe"
+        },
+        {
+            "id": "10060",
+            "name": "Flame Serpent Dagger"
+        },
+        {
+            "id": "10053",
+            "name": "Flame Serpent Focus"
+        },
+        {
+            "id": "10067",
+            "name": "Flame Serpent Greatsword"
+        },
+        {
+            "id": "10064",
+            "name": "Flame Serpent Hammer"
+        },
+        {
+            "id": "10066",
+            "name": "Flame Serpent Longbow"
+        },
+        {
+            "id": "10049",
+            "name": "Flame Serpent Mace"
+        },
+        {
+            "id": "10058",
+            "name": "Flame Serpent Pistol"
+        },
+        {
+            "id": "10051",
+            "name": "Flame Serpent Rifle"
+        },
+        {
+            "id": "10056",
+            "name": "Flame Serpent Scepter"
+        },
+        {
+            "id": "10054",
+            "name": "Flame Serpent Shield"
+        },
+        {
+            "id": "10063",
+            "name": "Flame Serpent Short Bow"
+        },
+        {
+            "id": "10050",
+            "name": "Flame Serpent Staff"
+        },
+        {
+            "id": "10061",
+            "name": "Flame Serpent Sword"
+        },
+        {
+            "id": "10047",
+            "name": "Flame Serpent Torch"
+        },
+        {
+            "id": "10048",
+            "name": "Flame Serpent Warhorn"
+        },
+        {
             "id": "5004",
             "name": "Krytan Harpoon"
         },
         {
             "id": "5170",
             "name": "Krytan Harpoon Gun"
+        },
+        {
+            "id": "1225",
+            "name": "Stag Helm"
         }
     ]
 }

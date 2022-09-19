@@ -15,7 +15,7 @@ class Dashboard(ttk.Frame):
             # 'dye': DyeFrame(self),
             # 'mini': MiniFrame(self),
             }
-        self.current_frame = self.frames['standalone']
+        self.current_frame = self.frames['collection']
 
         self.pack()
         self.nav.pack(side='left', fill='y')
@@ -39,16 +39,16 @@ class Nav(ttk.Frame):
             text='Standalone',
             command=lambda: self.show_frame('standalone'),
             ).pack(side='top')
-        self.dye_button = ttk.Button(
-            self,
-            text='Dyes',
-            command=lambda: self.show_frame('dye'),
-            ).pack(side='top')
-        self.mini_button = ttk.Button(
-            self,
-            text='Minis',
-            command=lambda: self.show_frame('mini'),
-            ).pack(side='top')
+        # self.dye_button = ttk.Button(
+        #     self,
+        #     text='Dyes',
+        #     command=lambda: self.show_frame('dye'),
+        #     ).pack(side='top')
+        # self.mini_button = ttk.Button(
+        #     self,
+        #     text='Minis',
+        #     command=lambda: self.show_frame('mini'),
+        #     ).pack(side='top')
 
     def show_frame(self, frame):
         self.dashboard.current_frame.pack_forget()

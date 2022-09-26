@@ -30,33 +30,19 @@ def is_unlocked(class_, id_):
     return True if all(unlocked) else False
 
 
-def save(data):
-    hash = {'name': data['name'], 'note': data['note']}
-    db.save(f"collections:{data['category']}", data['id'], hash)
-    db.add_to_sorted_set(f"collections:{data['category']}", data['id'])
-
-
 def setup():
 
-    def collect_skins_for(collection):
-        l = []
-        for skin in skins.standalone(collection['category']):
-            if skin['id'] in excluded_from_collections:
-                continue
-            if re.match(collection['name'] + ' ', skin['name']):
-                l.append(skin)
-        return l
+    def save(data):
+        hash = {'name': data['name'], 'note': data['note']}
+        db.save(f"collections:{data['category']}", data['id'], hash)
+        db.add_to_sorted_set(f"collections:{data['category']}", data['id'])
 
-    def save_skins_to_collection(skins, collection):
+    def save_skins_to_collection(collection):
         key = f"collections:{collection['category']}:{collection['id']}:skins"
-        for skin in skins:
-            db.r.zadd(key, {skin['id']: score[skin['type']]})
-            db.r.srem('skins:standalone', skin['id'])
-
-    def get_excluded():
-        with open('collections.json') as f:
-            excluded = json.load(f)['excluded']
-        return {i['id'] for i in excluded}
+        for skin in collection['skins']:
+            skin_type = skins.get(str(skin))['type']
+            db.r.zadd(key, {skin: score[skin_type]})
+            db.r.srem('skins:standalone', skin)
 
     types = [
         'Sword', 'Hammer', 'Longbow', 'Shortbow', 'Axe',
@@ -66,11 +52,10 @@ def setup():
         'Shoulders', 'Coat', 'Gloves', 'Leggings', 'Boots',
         ]
     score = dict(zip(types, range(len(types))))
-    excluded_from_collections = get_excluded()
 
     for collection in collections_json():
         save(collection)
-        save_skins_to_collection(collect_skins_for(collection), collection)
+        save_skins_to_collection(collection)
 
 
 def collections_json():

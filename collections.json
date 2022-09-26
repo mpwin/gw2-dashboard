@@ -2,55 +2,68 @@
     "weapon": [
         {
             "name": "Adamant Guard",
-            "note": "Charr Cultural Tier 3"
+            "note": "Charr Cultural Tier 3",
+            "skins": [4228, 4265, 4280, 4281, 4282, 4289, 4301, 4306, 4308, 4310, 4319, 4321, 4322, 4323, 4325, 4327, 4338, 4347, 4351]
         },
         {
             "name": "Aureate",
-            "note": "Human Cultural Tier 2"
+            "note": "Human Cultural Tier 2",
+            "skins": [4993, 4999, 5002, 5003, 5006, 5007, 5009, 5010, 5011, 5012, 5015, 5016, 5017, 5023, 5024, 5025, 5027, 5029, 5154]
         },
         {
             "name": "Flame",
-            "note": "Charr Cultural Tier 2"
+            "note": "Charr Cultural Tier 2",
+            "skins": [4753, 5060, 5075, 5086, 5092, 5128, 5140, 5143, 5145, 5152, 5155, 5163, 5173, 5179, 5180, 5187, 5219, 5224, 5227, 5232]
         },
         {
             "name": "Glyphic",
-            "note": "Asura and Sylvari Cultural Tier 1"
+            "note": "Asura and Sylvari Cultural Tier 1",
+            "skins": [5033, 5050, 5061, 5095, 5122, 5124, 5135, 5151, 5165, 5178, 5188, 5192, 5201, 5207, 5217, 5222, 5234, 5237, 5239]
         },
         {
             "name": "Krytan",
-            "note": "Human Cultural Tier 1"
+            "note": "Human Cultural Tier 1",
+            "skins": [4989, 4990, 4992, 4994, 4995, 4997, 4998, 5000, 5001, 5005, 5008, 5013, 5018, 5019, 5020, 5021, 5022, 5129, 5164]
         },
         {
             "name": "Norn",
-            "note": "Norn Cultural Tier 2"
+            "note": "Norn Cultural Tier 2",
+            "skins": [5047, 5078, 5084, 5089, 5096, 5103, 5104, 5108, 5109, 5115, 5117, 5138, 5153, 5162, 5174, 5194, 5228, 5230, 5235]
         },
         {
             "name": "Peacemaker's",
-            "note": "Asura Cultural Tier 3"
+            "note": "Asura Cultural Tier 3",
+            "skins": [4263, 4266, 4267, 4268, 4273, 4278, 4279, 4287, 4288, 4296, 4311, 4312, 4318, 4329, 4332, 4335, 4340, 4348, 4350]
         },
         {
             "name": "Seraph",
-            "note": "Human Cultural Tier 3"
+            "note": "Human Cultural Tier 3",
+            "skins": [4271, 4274, 4284, 4285, 4291, 4295, 4307, 4313, 4317, 4324, 4326, 4328, 4330, 4331, 4333, 4339, 4346, 4349, 4352]
         },
         {
             "name": "Shiverpeak",
-            "note": "Norn Cultural Tier 1"
+            "note": "Norn Cultural Tier 1",
+            "skins": [5058, 5098, 5106, 5111, 5113, 5114, 5136, 5148, 5150, 5158, 5159, 5171, 5172, 5175, 5176, 5182, 5193, 5213, 5229, 5231]
         },
         {
             "name": "Steam",
-            "note": "Charr Cultural Tier 1"
+            "note": "Charr Cultural Tier 1",
+            "skins": [5091, 5099, 5102, 5139, 5141, 5144, 5149, 5168, 5185, 5199, 5202, 5206, 5208, 5209, 5210, 5218, 5225, 5238, 5241]
         },
         {
             "name": "Verdant",
-            "note": "Asura and Sylvari Cultural Tier 2"
+            "note": "Asura and Sylvari Cultural Tier 2",
+            "skins": [3881, 5014, 5054, 5062, 5072, 5076, 5079, 5081, 5083, 5094, 5101, 5110, 5125, 5134, 5137, 5156, 5189, 5190, 5203]
         },
         {
             "name": "Warden",
-            "note": "Sylvari Cultural Tier 3"
+            "note": "Sylvari Cultural Tier 3",
+            "skins": [4257, 4258, 4259, 4260, 4261, 4262, 4264, 4269, 4270, 4277, 4290, 4292, 4309, 4314, 4320, 4336, 4337, 4341, 4343]
         },
         {
             "name": "Wolfborn",
-            "note": "Norn Cultural Tier 3"
+            "note": "Norn Cultural Tier 3",
+            "skins": [4272, 4275, 4276, 4283, 4286, 4293, 4294, 4297, 4298, 4302, 4303, 4304, 4305, 4315, 4316, 4334, 4342, 4344, 4345]
         }
     ],
 
@@ -58,63 +71,78 @@
     "heavy": [
         {
             "name": "Arborist",
-            "note": "Sylvari Cultural Tier 1"
+            "note": "Sylvari Cultural Tier 1",
+            "skins": [479, 483, 494, 496, 500, 519]
         },
         {
             "name": "Avenger's",
-            "note": "Human Cultural Tier 2"
+            "note": "Human Cultural Tier 2",
+            "skins": [379, 382, 389, 393, 396, 415]
         },
         {
             "name": "Commander's",
-            "note": "Human Cultural Tier 1"
+            "note": "Human Cultural Tier 1",
+            "skins": [371, 372, 376, 377, 381, 394]
         },
         {
             "name": "Dolyak",
-            "note": "Norn Cultural Tier 1"
+            "note": "Norn Cultural Tier 1",
+            "skins": [429, 430, 440, 442, 445, 462]
         },
         {
             "name": "Dreadnought",
-            "note": "Charr Cultural Tier 3"
+            "note": "Charr Cultural Tier 3",
+            "skins": [343, 354, 356, 357, 359, 368]
         },
         {
             "name": "Eagle",
-            "note": "Norn Cultural Tier 2"
+            "note": "Norn Cultural Tier 2",
+            "skins": [434, 436, 444, 446, 448, 467]
         },
         {
             "name": "Electromagnetic",
-            "note": "Asura Cultural Tier 3"
+            "note": "Asura Cultural Tier 3",
+            "skins": [294, 299, 309, 311, 313, 316]
         },
         {
             "name": "Electroplated",
-            "note": "Asura Cultural Tier 2"
+            "note": "Asura Cultural Tier 2",
+            "skins": [279, 284, 293, 295, 301, 310]
         },
         {
             "name": "Galvanic",
-            "note": "Asura Cultural Tier 1"
+            "note": "Asura Cultural Tier 1",
+            "skins": [264, 267, 277, 280, 281, 303]
         },
         {
             "name": "Legion",
-            "note": "Charr Cultural Tier 2"
+            "note": "Charr Cultural Tier 2",
+            "skins": [335, 336, 346, 348, 353, 367]
         },
         {
             "name": "Oaken",
-            "note": "Sylvari Cultural Tier 3"
+            "note": "Sylvari Cultural Tier 3",
+            "skins": [511, 514, 524, 526, 529, 532]
         },
         {
             "name": "Protector's",
-            "note": "Human Cultural Tier 3"
+            "note": "Human Cultural Tier 3",
+            "skins": [395, 399, 410, 411, 412, 422]
         },
         {
             "name": "Stag",
-            "note": "Norn Cultural Tier 3"
+            "note": "Norn Cultural Tier 3",
+            "skins": [461, 465, 470, 471, 474, 478]
         },
         {
             "name": "Warband",
-            "note": "Charr Cultural Tier 1"
+            "note": "Charr Cultural Tier 1",
+            "skins": [317, 318, 322, 324, 328, 342]
         },
         {
             "name": "Warden",
-            "note": "Sylvari Cultural Tier 2"
+            "note": "Sylvari Cultural Tier 2",
+            "skins": [492, 498, 509, 512, 517, 527]
         }
     ],
 
@@ -122,63 +150,78 @@
     "medium": [
         {
             "name": "Assassin's",
-            "note": "Human Cultural Tier 3"
+            "note": "Human Cultural Tier 3",
+            "skins": [407, 408, 417, 419, 421, 424]
         },
         {
             "name": "Auxiliary Powered",
-            "note": "Asura Cultural Tier 2"
+            "note": "Asura Cultural Tier 2",
+            "skins": [271, 278, 287, 288, 296, 304]
         },
         {
             "name": "Drover",
-            "note": "Charr Cultural Tier 1"
+            "note": "Charr Cultural Tier 1",
+            "skins": [319, 320, 325, 329, 333, 350]
         },
         {
             "name": "Evergreen",
-            "note": "Sylvari Cultural Tier 1"
+            "note": "Sylvari Cultural Tier 1",
+            "skins": [481, 482, 488, 491, 493, 510]
         },
         {
             "name": "Falconer's",
-            "note": "Human Cultural Tier 2"
+            "note": "Human Cultural Tier 2",
+            "skins": [385, 388, 397, 398, 403, 416]
         },
         {
             "name": "Firstborn",
-            "note": "Sylvari Cultural Tier 3"
+            "note": "Sylvari Cultural Tier 3",
+            "skins": [504, 513, 522, 523, 525, 531]
         },
         {
             "name": "Nightshade",
-            "note": "Sylvari Cultural Tier 2"
+            "note": "Sylvari Cultural Tier 2",
+            "skins": [487, 495, 503, 506, 508, 521]
         },
         {
             "name": "Predatory",
-            "note": "Norn Cultural Tier 2"
+            "note": "Norn Cultural Tier 2",
+            "skins": [443, 447, 455, 457, 460, 475]
         },
         {
             "name": "Protean",
-            "note": "Asura Cultural Tier 1"
+            "note": "Asura Cultural Tier 1",
+            "skins": [265, 266, 272, 274, 276, 292]
         },
         {
             "name": "Prototype",
-            "note": "Asura Cultural Tier 3"
+            "note": "Asura Cultural Tier 3",
+            "skins": [290, 297, 306, 307, 308, 315]
         },
         {
             "name": "Scout's",
-            "note": "Human Cultural Tier 1"
+            "note": "Human Cultural Tier 1",
+            "skins": [375, 378, 384, 386, 392, 409]
         },
         {
             "name": "Trapper",
-            "note": "Charr Cultural Tier 3"
+            "note": "Charr Cultural Tier 3",
+            "skins": [349, 355, 363, 365, 366, 370]
         },
         {
             "name": "Wolf",
-            "note": "Norn Cultural Tier 3"
+            "note": "Norn Cultural Tier 3",
+            "skins": [451, 453, 463, 464, 469, 476]
         },
         {
             "name": "Wolfborn",
-            "note": "Norn Cultural Tier 1"
+            "note": "Norn Cultural Tier 1",
+            "skins": [425, 426, 431, 432, 437, 452]
         },
         {
             "name": "Wrangler",
-            "note": "Charr Cultural Tier 2"
+            "note": "Charr Cultural Tier 2",
+            "skins": [326, 331, 341, 345, 351, 362]
         }
     ],
 
@@ -186,175 +229,78 @@
     "light": [
         {
             "name": "Adept",
-            "note": "Asura Cultural Tier 1"
+            "note": "Asura Cultural Tier 1",
+            "skins": [263, 268, 269, 270, 273, 289]
         },
         {
             "name": "Archon",
-            "note": "Charr Cultural Tier 2"
+            "note": "Charr Cultural Tier 2",
+            "skins": [327, 330, 338, 339, 344, 358]
         },
         {
             "name": "Aristocrat's",
-            "note": "Human Cultural Tier 2"
+            "note": "Human Cultural Tier 2",
+            "skins": [390, 391, 400, 405, 406, 420]
         },
         {
             "name": "Dryad",
-            "note": "Sylvari Cultural Tier 3"
+            "note": "Sylvari Cultural Tier 3",
+            "skins": [507, 515, 516, 518, 520, 530]
         },
         {
             "name": "Genius",
-            "note": "Asura Cultural Tier 2"
+            "note": "Asura Cultural Tier 2",
+            "skins": [275, 282, 283, 285, 286, 312]
         },
         {
             "name": "Havroun",
-            "note": "Norn Cultural Tier 2"
+            "note": "Norn Cultural Tier 2",
+            "skins": [439, 441, 449, 450, 456, 473]
         },
         {
             "name": "Invoker's",
-            "note": "Charr Cultural Tier 1"
+            "note": "Charr Cultural Tier 1",
+            "skins": [321, 323, 332, 334, 337, 352]
         },
         {
             "name": "Lupine",
-            "note": "Norn Cultural Tier 3"
+            "note": "Norn Cultural Tier 3",
+            "skins": [458, 459, 466, 468, 472, 477]
         },
         {
             "name": "Magus",
-            "note": "Charr Cultural Tier 3"
+            "note": "Charr Cultural Tier 3",
+            "skins": [340, 347, 360, 361, 364, 369]
         },
         {
             "name": "Orchid",
-            "note": "Sylvari Cultural Tier 2"
+            "note": "Sylvari Cultural Tier 2",
+            "skins": [489, 497, 499, 501, 502, 528]
         },
         {
             "name": "Researcher's",
-            "note": "Human Cultural Tier 1"
+            "note": "Human Cultural Tier 1",
+            "skins": [373, 374, 380, 383, 387, 404]
         },
         {
             "name": "Savant",
-            "note": "Asura Cultural Tier 3"
+            "note": "Asura Cultural Tier 3",
+            "skins": [291, 298, 300, 302, 305, 314]
         },
         {
             "name": "Sheepskin",
-            "note": "Norn Cultural Tier 1"
+            "note": "Norn Cultural Tier 1",
+            "skins": [427, 428, 433, 435, 438, 454]
         },
         {
             "name": "Snapdragon",
-            "note": "Sylvari Cultural Tier 1"
+            "note": "Sylvari Cultural Tier 1",
+            "skins": [480, 484, 485, 486, 490, 505]
         },
         {
             "name": "Sorcerer's",
-            "note": "Human Cultural Tier 3"
-        }
-    ],
-
-
-    "excluded": [
-        {
-            "id": "5214",
-            "name": "Flame Harpoon"
-        },
-        {
-            "id": "4753",
-            "name": "Flame Trident"
-        },
-        {
-            "id": "9479",
-            "name": "Flame Dominion Torch"
-        },
-        {
-            "id": "9289",
-            "name": "Flame Legion Combat Blade"
-        },
-        {
-            "id": "9305",
-            "name": "Flame Legion Flamesaw"
-        },
-        {
-            "id": "9301",
-            "name": "Flame Legion Longshot"
-        },
-        {
-            "id": "9306",
-            "name": "Flame Legion Pistol"
-        },
-        {
-            "id": "9283",
-            "name": "Flame Legion Staff"
-        },
-        {
-            "id": "10065",
-            "name": "Flame Serpent Axe"
-        },
-        {
-            "id": "10060",
-            "name": "Flame Serpent Dagger"
-        },
-        {
-            "id": "10053",
-            "name": "Flame Serpent Focus"
-        },
-        {
-            "id": "10067",
-            "name": "Flame Serpent Greatsword"
-        },
-        {
-            "id": "10064",
-            "name": "Flame Serpent Hammer"
-        },
-        {
-            "id": "10066",
-            "name": "Flame Serpent Longbow"
-        },
-        {
-            "id": "10049",
-            "name": "Flame Serpent Mace"
-        },
-        {
-            "id": "10058",
-            "name": "Flame Serpent Pistol"
-        },
-        {
-            "id": "10051",
-            "name": "Flame Serpent Rifle"
-        },
-        {
-            "id": "10056",
-            "name": "Flame Serpent Scepter"
-        },
-        {
-            "id": "10054",
-            "name": "Flame Serpent Shield"
-        },
-        {
-            "id": "10063",
-            "name": "Flame Serpent Short Bow"
-        },
-        {
-            "id": "10050",
-            "name": "Flame Serpent Staff"
-        },
-        {
-            "id": "10061",
-            "name": "Flame Serpent Sword"
-        },
-        {
-            "id": "10047",
-            "name": "Flame Serpent Torch"
-        },
-        {
-            "id": "10048",
-            "name": "Flame Serpent Warhorn"
-        },
-        {
-            "id": "5004",
-            "name": "Krytan Harpoon"
-        },
-        {
-            "id": "5170",
-            "name": "Krytan Harpoon Gun"
-        },
-        {
-            "id": "1225",
-            "name": "Stag Helm"
+            "note": "Human Cultural Tier 3",
+            "skins": [401, 402, 413, 414, 418, 423]
         }
     ]
 }

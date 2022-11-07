@@ -1,5 +1,5 @@
 import api_wrapper
-import data
+import gw2_dashboard.data as data
 
 
 def setup():

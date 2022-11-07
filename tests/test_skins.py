@@ -1,6 +1,6 @@
 import unittest
 
-from data import skins
+from gw2_dashboard.data import skins
 
 
 class TestSkins(unittest.TestCase):
